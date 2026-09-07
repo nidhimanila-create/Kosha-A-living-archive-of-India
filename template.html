@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosha — Template Page</title>
+
+<!-- Fonts: same two families on every page -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Shared design system — link this exact file, don't copy/modify it per-page -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar loads here automatically via include.js -->
+  <div id="navbar-slot"></div>
+
+  <!-- ============================================
+       EXAMPLE SECTION 1 — page header
+       ============================================ -->
+  <section class="section" style="padding-top: 140px;">
+    <div class="container">
+      <p class="eyebrow reveal">EXAMPLE SECTION</p>
+      <h1 class="reveal">Page title goes here</h1>
+      <p class="lede reveal" style="margin-top: 16px;">
+        A short italic line of framing copy, the way the landing page's tagline works.
+      </p>
+      <div class="reveal" style="margin-top: 32px; display: flex; gap: 16px;">
+        <a href="#" class="btn btn-primary">Primary action</a>
+        <a href="#" class="btn btn-ghost">Secondary action</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EXAMPLE SECTION 2 — card grid
+       This is the pattern for festival/dish/state/
+       character cards. Swap the background image and
+       text, keep the structure.
+       ============================================ -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Card grid example</h2>
+      <div class="card-grid" style="margin-top: 40px;">
+
+        <a href="#" class="card reveal">
+          <div class="card__bg" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800');"></div>
+          <div class="card__overlay"></div>
+          <div class="card__content">
+            <span class="tag">Example tag</span>
+            <h3 class="card__title" style="margin-top: 12px;">Card title</h3>
+            <p class="card__desc">One short line describing this item.</p>
+          </div>
+        </a>
+
+        <a href="#" class="card reveal">
+          <div class="card__bg" style="background-image: url('https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800');"></div>
+          <div class="card__overlay"></div>
+          <div class="card__content">
+            <span class="tag">Example tag</span>
+            <h3 class="card__title" style="margin-top: 12px;">Card title</h3>
+            <p class="card__desc">One short line describing this item.</p>
+          </div>
+        </a>
+
+        <a href="#" class="card reveal">
+          <div class="card__bg" style="background-image: url('https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?w=800');"></div>
+          <div class="card__overlay"></div>
+          <div class="card__content">
+            <span class="tag">Example tag</span>
+            <h3 class="card__title" style="margin-top: 12px;">Card title</h3>
+            <p class="card__desc">One short line describing this item.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EXAMPLE SECTION 3 — modal pattern
+       Use this same structure for character detail
+       panels and the video-experience modal.
+       ============================================ -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Modal example</h2>
+      <button class="btn btn-ghost reveal" style="margin-top: 24px;" onclick="document.getElementById('exampleModal').style.display='flex'">
+        Open example modal
+      </button>
+    </div>
+  </section>
+
+  <div class="modal-backdrop" id="exampleModal" style="display:none;">
+    <div class="modal">
+      <button class="modal__close" onclick="document.getElementById('exampleModal').style.display='none'">✕</button>
+      <p class="eyebrow">Category</p>
+      <h3>Modal title</h3>
+      <p style="margin-top: 16px;">This is the shared shape for any detail panel — a character bio, a festival's full story, or the video-experience popup. Keep the header (eyebrow + title), then whatever content fields the section needs below.</p>
+    </div>
+  </div>
+
+  <!-- Footer loads here automatically via include.js -->
+  <div id="footer-slot"></div>
+
+  <script src="include.js"></script>
+  <script src="reveal.js"></script>
+</body>
+</html>

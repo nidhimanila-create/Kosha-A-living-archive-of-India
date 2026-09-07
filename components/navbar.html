@@ -1,0 +1,76 @@
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__logo">KOSHA</a>
+
+    <nav class="navbar__links">
+      <a href="explore-state.html">Explore by State</a>
+      <a href="category.html?type=performing-arts">Performing Arts</a>
+      <a href="category.html?type=cuisine">Food &amp; Cuisine</a>
+      <a href="category.html?type=art-crafts">Art &amp; Crafts</a>
+      <a href="category.html?type=festivals">Festivals</a>
+      <a href="ramayana.html">Ramayana</a>
+      <a href="mahabharata.html">Mahabharata</a>
+    </nav>
+
+    <button class="navbar__menu-btn" id="navbarMenuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<style>
+  /*
+    Navbar-specific styles live here (not in the shared styles.css)
+    because this partial is self-contained — anyone can copy just
+    this file and it still looks right.
+  */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  }
+  .navbar.is-scrolled {
+    background: rgba(10, 14, 26, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+  }
+  .navbar__inner {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar__logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+  }
+  .navbar__links {
+    display: flex;
+    gap: 28px;
+  }
+  .navbar__links a {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    transition: color var(--dur-fast) var(--ease);
+  }
+  .navbar__links a:hover { color: var(--gold); }
+  .navbar__menu-btn { display: none; color: var(--text-primary); font-size: 1.3rem; }
+
+  @media (max-width: 900px) {
+    .navbar__links { display: none; }
+    .navbar__menu-btn { display: block; }
+  }
+</style>
+
+<script>
+  /* Adds the solid background once the page scrolls past the hero. */
+  window.addEventListener('scroll', function () {
+    var nav = document.getElementById('navbar');
+    if (window.scrollY > 40) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  });
+</script>
