@@ -2,42 +2,114 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Kosha — The Living Treasury of India</title>
 
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
 
     <!-- Shared Kosha stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
 
 
     <style>
 
         /* =========================================================
            KOSHA — LANDING PAGE
-           Person 1 — Opening Experience
-           
-           IMPORTANT:
-           The shared styles.css is NOT modified.
-           These styles are specific to index.html.
+           Cinematic Heritage Design
            ========================================================= */
 
+        :root {
 
-        html {
-            scroll-behavior: smooth;
+            --landing-black: #050505;
+            --landing-deep: #090706;
+            --landing-burgundy: #160807;
+            --landing-burgundy-soft: #24100e;
+
+            --landing-gold: #c9a45c;
+            --landing-gold-light: #e1c37a;
+            --landing-gold-dark: #8f6d32;
+
+            --landing-white: #eee9df;
+            --landing-muted: #aaa39a;
+
+            --landing-serif:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            --landing-sans:
+                "Inter",
+                Arial,
+                sans-serif;
+
         }
 
 
-        body {
-            background: #0A0E1A;
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        .kosha-landing,
+        .kosha-landing * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        .kosha-landing {
+
+            margin: 0;
+            padding: 0;
+
+            background:
+                var(--landing-black);
+
+            color:
+                var(--landing-white);
+
+            font-family:
+                var(--landing-sans);
+
+            overflow-x: hidden;
+
+        }
+
+
+        .kosha-landing a {
+
+            text-decoration: none;
+
+            color: inherit;
+
         }
 
 
@@ -45,21 +117,50 @@
            CINEMATIC INTRO
            ========================================================= */
 
-        .landing-intro {
+        .cinematic-intro {
 
-            position: relative;
+            position: fixed;
 
-            width: 100%;
-            height: 100vh;
-            min-height: 650px;
+            inset: 0;
 
-            overflow: hidden;
+            z-index: 9999;
 
-            background: #08070a;
+            background: #030303;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition:
+                opacity 1.2s ease,
+                visibility 1.2s ease;
+
         }
 
 
-        /* Individual background slides */
+        .cinematic-intro.is-hidden {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+        .intro-slides {
+
+            position: absolute;
+
+            inset: 0;
+
+            overflow: hidden;
+
+        }
+
 
         .intro-slide {
 
@@ -67,16 +168,18 @@
 
             inset: 0;
 
-            opacity: 0;
-
-            transform: scale(1.06);
-
             background-size: cover;
+
             background-position: center;
 
+            opacity: 0;
+
+            transform: scale(1.04);
+
             transition:
-                opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 7s cubic-bezier(0.22, 1, 0.36, 1);
+                opacity 1.5s ease,
+                transform 8s ease;
+
         }
 
 
@@ -84,387 +187,607 @@
 
             opacity: 1;
 
-            transform: scale(1);
+            transform: scale(1.12);
+
         }
 
 
-        /* Dark cinematic overlay */
+        /* =========================================================
+           INTRO SLIDE 1 — HAWA MAHAL
+           ========================================================= */
 
-        .intro-overlay {
+        .intro-slide:nth-child(1) {
 
-            position: absolute;
+            background-image:
 
-            inset: 0;
-
-            background:
                 linear-gradient(
-                    180deg,
-                    rgba(5, 5, 8, 0.42) 0%,
-                    rgba(5, 5, 8, 0.16) 35%,
-                    rgba(5, 5, 8, 0.76) 100%
+                    rgba(5, 2, 2, 0.48),
+                    rgba(3, 1, 1, 0.82)
+                ),
+
+                url(
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Night_At_The_Wind_Palace.jpg/3840px-Night_At_The_Wind_Palace.jpg"
                 );
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* =========================================================
+           INTRO SLIDE 2 — DEITY
+           ========================================================= */
+
+        .intro-slide:nth-child(2) {
+
+            background-image:
+
+                linear-gradient(
+                    rgba(8, 2, 2, 0.60),
+                    rgba(5, 2, 2, 0.84)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1631556373338-52e31188effc?auto=format&fit=crop&w=2200&q=85"
+                );
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* =========================================================
+           INTRO SLIDE 3 — HAMPI
+           ========================================================= */
+
+        .intro-slide:nth-child(3) {
+
+            background-image:
+
+                linear-gradient(
+                    rgba(8, 2, 2, 0.48),
+                    rgba(5, 2, 2, 0.86)
+                ),
+
+                url(
+                    "https://c.pxhere.com/images/08/05/f4b1cb9ee3f1288184bc83ca4aff-1631571.jpg!d"
+                );
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* =========================================================
+           INTRO SLIDE 4 — YAKSHAGANA
+           ========================================================= */
+
+        .intro-slide:nth-child(4) {
+
+            background-image:
+
+                linear-gradient(
+                    rgba(8, 2, 2, 0.35),
+                    rgba(3, 1, 1, 0.78)
+                ),
+
+                url(
+                    "https://upload.wikimedia.org/wikipedia/commons/c/ce/%E0%B2%A4%E0%B3%86%E0%B2%82%E0%B2%95%E0%B3%81%E0%B2%9F%E0%B3%8D%E0%B2%9F%E0%B3%81_%E0%B2%AF%E0%B2%95%E0%B3%8D%E0%B2%B7%E0%B2%97%E0%B2%BE%E0%B2%A8%E0%B2%A6_%E0%B2%AC%E0%B2%A3%E0%B3%8D%E0%B2%A3%E0%B2%A6_%E0%B2%B5%E0%B3%87%E0%B2%B7.jpg"
+                );
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        /* =========================================================
+           INTRO CONTENT
+           ========================================================= */
+
+        .intro-content {
+
+            position: relative;
 
             z-index: 2;
-        }
-
-
-        /* Cinematic vignette */
-
-        .intro-vignette {
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    ellipse at center,
-                    transparent 20%,
-                    rgba(0, 0, 0, 0.65) 100%
-                );
-
-            z-index: 3;
-
-            pointer-events: none;
-        }
-
-
-        /* =========================================================
-           KOSHA BRAND
-           ========================================================= */
-
-        .intro-brand {
-
-            position: absolute;
-
-            top: 34px;
-            left: 42px;
-
-            z-index: 10;
-
-            font-family: var(--font-display);
-
-            font-size: 1.15rem;
-
-            letter-spacing: 0.25em;
-
-            color: rgba(243, 239, 230, 0.9);
-
-            text-transform: uppercase;
-        }
-
-
-        /* =========================================================
-           SLIDE CAPTION
-           ========================================================= */
-
-        .intro-caption {
-
-            position: absolute;
-
-            left: 50%;
-            bottom: 145px;
-
-            transform: translateX(-50%);
-
-            z-index: 10;
-
-            width: min(90%, 700px);
 
             text-align: center;
 
-            pointer-events: none;
-        }
+            width:
+                min(90%, 800px);
 
-
-        .intro-caption-title {
-
-            font-family: var(--font-body);
-
-            font-size: 0.75rem;
-
-            font-weight: 600;
-
-            letter-spacing: 0.38em;
-
-            color: var(--gold);
-
-            text-transform: uppercase;
+            transform:
+                translateY(15px);
 
             opacity: 0;
 
-            transform: translateY(12px);
+            animation:
+                introContentIn 1.5s ease forwards;
 
-            transition:
-                opacity 0.8s ease,
-                transform 0.8s var(--ease);
+            animation-delay:
+                0.5s;
+
         }
 
 
-        .intro-caption-title.visible {
+        .intro-kosha {
 
-            opacity: 1;
+            font-family:
+                var(--landing-serif);
 
-            transform: translateY(0);
+            font-size:
+                1rem;
+
+            letter-spacing:
+                0.42em;
+
+            color:
+                var(--landing-gold);
+
+            margin-bottom:
+                25px;
+
         }
 
 
-        /* Gold line underneath caption */
+        .intro-title {
+
+            font-family:
+                var(--landing-serif);
+
+            font-size:
+                clamp(3rem, 8vw, 7rem);
+
+            font-weight:
+                300;
+
+            letter-spacing:
+                0.04em;
+
+            color:
+                var(--landing-gold-light);
+
+            line-height:
+                0.9;
+
+            margin:
+                0;
+
+        }
+
 
         .intro-line {
 
-            width: 58px;
-            height: 2px;
+            width:
+                60px;
 
-            margin: 20px auto 0;
+            height:
+                1px;
 
-            background: var(--gold);
+            background:
+                var(--landing-gold);
 
-            transform: scaleX(0);
+            margin:
+                30px auto 20px;
 
-            transform-origin: center;
+            opacity:
+                0.75;
 
-            transition:
-                transform 1s var(--ease);
         }
 
 
-        .intro-line.visible {
+        .intro-caption {
 
-            transform: scaleX(1);
+            font-size:
+                0.68rem;
+
+            letter-spacing:
+                0.4em;
+
+            color:
+                #d2c5ad;
+
+            text-transform:
+                uppercase;
+
         }
 
 
         /* =========================================================
-           SKIP BUTTON
+           SKIP
            ========================================================= */
 
-        .skip-button {
+        .intro-skip {
 
-            position: absolute;
+            position:
+                absolute;
 
-            bottom: 52px;
-            left: 50%;
+            z-index:
+                10;
 
-            transform: translateX(-50%);
+            bottom:
+                38px;
 
-            z-index: 20;
+            left:
+                50%;
 
-            border: none;
+            transform:
+                translateX(-50%);
 
-            background: transparent;
+            border:
+                none;
 
-            color: rgba(243, 239, 230, 0.78);
+            background:
+                transparent;
 
-            font-family: var(--font-body);
+            color:
+                #b8ae9d;
 
-            font-size: 0.68rem;
+            font-family:
+                var(--landing-sans);
 
-            font-weight: 500;
+            font-size:
+                0.65rem;
 
-            letter-spacing: 0.35em;
+            letter-spacing:
+                0.38em;
 
-            text-transform: uppercase;
-
-            padding: 12px 20px;
-
-            cursor: pointer;
+            cursor:
+                pointer;
 
             transition:
-                color var(--dur-fast) var(--ease),
-                transform var(--dur-fast) var(--ease);
+                color 0.3s ease;
+
         }
 
 
-        .skip-button:hover {
+        .intro-skip:hover {
 
-            color: var(--gold-soft);
+            color:
+                var(--landing-gold-light);
 
-            transform:
-                translateX(-50%)
-                translateY(-2px);
         }
 
 
         /* =========================================================
-           SLIDESHOW PROGRESS
+           INTRO PROGRESS DOTS
            ========================================================= */
 
         .intro-progress {
 
-            position: absolute;
+            position:
+                absolute;
 
-            left: 50%;
-            bottom: 95px;
+            bottom:
+                22px;
 
-            transform: translateX(-50%);
+            left:
+                50%;
 
-            z-index: 20;
+            transform:
+                translateX(-50%);
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
+            gap:
+                8px;
 
-            gap: 7px;
         }
 
 
-        .progress-dot {
+        .intro-dot {
 
-            width: 4px;
-            height: 4px;
+            width:
+                4px;
 
-            border-radius: 50%;
+            height:
+                4px;
 
-            background: rgba(243, 239, 230, 0.32);
+            border-radius:
+                50%;
+
+            background:
+                rgba(201, 164, 92, 0.35);
 
             transition:
-                width 0.5s ease,
-                background 0.5s ease;
+                all 0.4s ease;
+
         }
 
 
-        .progress-dot.active {
+        .intro-dot.active {
 
-            width: 25px;
+            width:
+                24px;
 
-            border-radius: 10px;
+            border-radius:
+                10px;
 
-            background: var(--gold);
+            background:
+                var(--landing-gold);
+
+        }
+
+
+        @keyframes introContentIn {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(25px);
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+
+            }
+
         }
 
 
         /* =========================================================
-           WELCOME TO INDIA
+           MAIN LANDING
            ========================================================= */
 
-        .welcome-screen {
+        .landing-main {
 
-            position: relative;
-
-            min-height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
+            position:
+                relative;
 
             background:
+
                 radial-gradient(
-                    circle at 50% 45%,
-                    rgba(212, 169, 78, 0.08),
-                    transparent 38%
+                    circle at 50% 25%,
+                    rgba(100, 34, 25, 0.13),
+                    transparent 40%
                 ),
-                radial-gradient(
-                    circle at 15% 80%,
-                    rgba(224, 149, 76, 0.06),
-                    transparent 35%
-                ),
-                var(--bg-primary);
-        }
 
-
-        .welcome-screen::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
                 linear-gradient(
-                    120deg,
-                    transparent 30%,
-                    rgba(212, 169, 78, 0.025),
-                    transparent 70%
+                    180deg,
+                    #030303 0%,
+                    #080505 50%,
+                    #0b0504 100%
                 );
 
-            pointer-events: none;
         }
 
 
-        .welcome-inner {
+        /* =========================================================
+           WELCOME SECTION
+           ========================================================= */
 
-            position: relative;
+        .welcome-section {
 
-            width: min(90%, 900px);
+            position:
+                relative;
 
-            text-align: center;
+            min-height:
+                100vh;
 
-            padding: 120px 20px 100px;
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            overflow:
+                hidden;
+
+            background:
+                #040404;
+
         }
 
 
-        /* WELCOME TO */
+        .welcome-image {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background-image:
+
+                linear-gradient(
+                    90deg,
+                    rgba(2, 2, 2, 0.90) 0%,
+                    rgba(2, 2, 2, 0.70) 42%,
+                    rgba(2, 2, 2, 0.82) 100%
+                ),
+
+                linear-gradient(
+                    rgba(15, 5, 3, 0.35),
+                    rgba(4, 2, 2, 0.90)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=2200&q=85"
+                );
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
+            opacity:
+                0.65;
+
+            transform:
+                scale(1.03);
+
+        }
+
+
+        .welcome-veil {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center,
+                    rgba(0, 0, 0, 0.05) 0%,
+                    rgba(0, 0, 0, 0.55) 65%,
+                    rgba(0, 0, 0, 0.88) 100%
+                );
+
+        }
+
+
+        .welcome-content {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            width:
+                min(90%, 1050px);
+
+            text-align:
+                center;
+
+            padding:
+                120px 20px 80px;
+
+        }
+
 
         .welcome-eyebrow {
 
-            margin: 0 0 25px;
+            font-size:
+                0.72rem;
 
-            color: var(--gold);
+            letter-spacing:
+                0.48em;
 
-            font-family: var(--font-body);
+            text-transform:
+                uppercase;
 
-            font-size: 0.72rem;
+            color:
+                var(--landing-gold);
 
-            font-weight: 600;
+            margin-bottom:
+                38px;
 
-            letter-spacing: 0.38em;
-
-            text-transform: uppercase;
         }
 
 
-        /* INDIA */
-
         .welcome-title {
 
-            margin: 0;
+            margin:
+                0;
 
-            font-family: var(--font-display);
+            font-family:
+                var(--landing-serif);
 
-            font-size: clamp(5rem, 14vw, 10rem);
+            font-size:
+                clamp(6rem, 14vw, 12rem);
 
-            font-weight: 500;
+            line-height:
+                0.72;
 
-            line-height: 0.9;
+            font-weight:
+                300;
 
-            letter-spacing: -0.025em;
+            letter-spacing:
+                -0.02em;
 
-            color: var(--gold-soft);
+            background:
+
+                linear-gradient(
+                    110deg,
+                    #f0d48b,
+                    #c79c4c,
+                    #e2bb69,
+                    #a87b35
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+            text-shadow:
+                0 0 40px rgba(190, 142, 56, 0.08);
+
         }
 
 
         .welcome-description {
 
-            max-width: 700px;
+            margin:
+                70px auto 0;
 
-            margin: 42px auto 0;
+            max-width:
+                750px;
 
-            font-family: var(--font-body);
+            font-size:
+                clamp(0.85rem, 1.3vw, 1.05rem);
 
-            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            line-height:
+                1.8;
 
-            line-height: 1.8;
+            font-weight:
+                300;
 
-            color: var(--text-secondary);
+            color:
+                #aaa59e;
+
         }
 
 
         .welcome-question {
 
-            margin: 55px auto 38px;
+            margin-top:
+                58px;
 
-            font-family: var(--font-display);
+            font-family:
+                var(--landing-serif);
 
-            font-style: italic;
+            font-style:
+                italic;
 
-            font-size: clamp(1.45rem, 3vw, 2.1rem);
+            font-size:
+                clamp(1.6rem, 3vw, 2.25rem);
 
-            color: var(--text-primary);
+            font-weight:
+                400;
+
+            color:
+                #d7d1c7;
+
         }
 
 
@@ -474,70 +797,131 @@
 
         .explore-button {
 
-            position: relative;
+            position:
+                relative;
 
-            display: inline-flex;
+            display:
+                inline-flex;
 
-            align-items: center;
+            align-items:
+                center;
 
-            justify-content: center;
+            justify-content:
+                center;
 
-            min-width: 300px;
+            gap:
+                18px;
 
-            padding: 18px 38px;
+            margin-top:
+                48px;
 
-            border: 1px solid var(--border-strong);
+            min-width:
+                270px;
 
-            color: var(--gold-soft);
+            padding:
+                19px 34px;
 
-            font-family: var(--font-body);
+            border:
+                1px solid rgba(201, 164, 92, 0.75);
 
-            font-size: 0.78rem;
+            background:
+                rgba(0, 0, 0, 0.18);
 
-            font-weight: 600;
+            color:
+                var(--landing-gold-light);
 
-            letter-spacing: 0.28em;
+            font-size:
+                0.68rem;
 
-            text-transform: uppercase;
+            letter-spacing:
+                0.42em;
 
-            background: transparent;
+            text-transform:
+                uppercase;
 
-            text-decoration: none;
+            cursor:
+                pointer;
 
             transition:
-                background 0.5s var(--ease),
-                border-color 0.5s var(--ease),
-                color 0.5s var(--ease),
-                transform 0.5s var(--ease);
+                background 0.4s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                transform 0.4s ease;
+
         }
 
 
-        .explore-button span {
+        .explore-button::before {
 
-            margin-left: 16px;
+            content:
+                "";
 
-            font-size: 1rem;
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            transform:
+                scaleX(0);
+
+            transform-origin:
+                left;
+
+            background:
+                var(--landing-gold);
 
             transition:
-                transform 0.5s var(--ease);
+                transform 0.4s ease;
+
+            z-index:
+                -1;
+
         }
 
 
         .explore-button:hover {
 
-            background: rgba(212, 169, 78, 0.08);
+            color:
+                #090604;
 
-            border-color: var(--gold);
+            border-color:
+                var(--landing-gold-light);
 
-            color: var(--gold-soft);
+            transform:
+                translateY(-2px);
 
-            transform: translateY(-3px);
         }
 
 
-        .explore-button:hover span {
+        .explore-button:hover::before {
 
-            transform: translateX(7px);
+            transform:
+                scaleX(1);
+
+        }
+
+
+        .explore-arrow {
+
+            font-size:
+                1rem;
+
+            letter-spacing:
+                0;
+
+            transition:
+                transform 0.3s ease;
+
+        }
+
+
+        .explore-button:hover
+        .explore-arrow {
+
+            transform:
+                translateX(5px);
+
         }
 
 
@@ -547,82 +931,128 @@
 
         .paths-section {
 
-            position: relative;
+            position:
+                relative;
 
-            min-height: 100vh;
+            min-height:
+                100vh;
 
-            padding: 140px 0 160px;
+            padding:
+                140px 0 130px;
 
             background:
+
                 radial-gradient(
-                    circle at 20% 30%,
-                    rgba(224, 149, 76, 0.07),
-                    transparent 30%
+                    circle at 70% 10%,
+                    rgba(111, 30, 23, 0.12),
+                    transparent 32%
                 ),
-                radial-gradient(
-                    circle at 80% 70%,
-                    rgba(212, 169, 78, 0.05),
-                    transparent 35%
-                ),
-                var(--bg-primary);
+
+                linear-gradient(
+                    180deg,
+                    #090504,
+                    #0b0605
+                );
+
+        }
+
+
+        .paths-container {
+
+            width:
+                min(1200px, 88%);
+
+            margin:
+                0 auto;
+
         }
 
 
         .paths-header {
 
-            max-width: var(--max-width);
+            margin-bottom:
+                85px;
 
-            margin: 0 auto;
-
-            padding: 0 var(--space-md);
         }
 
 
         .paths-chapter {
 
-            margin: 0 0 24px;
+            font-size:
+                0.65rem;
 
-            color: var(--gold);
+            letter-spacing:
+                0.45em;
 
-            font-family: var(--font-body);
+            color:
+                var(--landing-gold);
 
-            font-size: 0.72rem;
+            text-transform:
+                uppercase;
 
-            font-weight: 600;
+            margin-bottom:
+                25px;
 
-            letter-spacing: 0.3em;
-
-            text-transform: uppercase;
         }
 
 
         .paths-title {
 
-            margin: 0;
+            margin:
+                0;
 
-            font-family: var(--font-display);
+            font-family:
+                var(--landing-serif);
 
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight:
+                300;
 
-            font-weight: 500;
+            font-size:
+                clamp(3.4rem, 7vw, 6.8rem);
 
-            color: var(--text-primary);
+            line-height:
+                0.9;
 
-            line-height: 0.95;
+            color:
+                #e7dfd3;
+
         }
 
 
         .paths-subtitle {
 
-            margin: 28px 0 0;
+            margin-top:
+                25px;
 
-            font-family: var(--font-display);
+            font-family:
+                var(--landing-serif);
 
-            font-style: italic;
+            font-style:
+                italic;
 
-            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+            font-size:
+                1.35rem;
 
-            color: var(--text-secondary);
+            color:
+                #aaa29a;
+
+        }
+
+
+        .paths-line {
+
+            width:
+                100%;
+
+            height:
+                1px;
+
+            background:
+                rgba(201, 164, 92, 0.18);
+
+            margin-top:
+                50px;
+
         }
 
 
@@ -630,300 +1060,480 @@
            PATH GRID
            ========================================================= */
 
-        .path-grid {
+        .paths-grid {
 
-            max-width: 1100px;
+            display:
+                grid;
 
-            margin: 95px auto 0;
+            grid-template-columns:
+                repeat(2, 1fr);
 
-            padding: 0 var(--space-md);
+            column-gap:
+                80px;
 
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            column-gap: 100px;
-
-            row-gap: 70px;
         }
 
 
-        .path-card {
+        .path-item {
 
-            position: relative;
+            position:
+                relative;
 
-            display: block;
+            display:
+                grid;
 
-            padding: 10px 0 25px;
+            grid-template-columns:
+                42px 1fr 20px;
+
+            align-items:
+                center;
+
+            min-height:
+                125px;
 
             border-bottom:
-                1px solid rgba(212, 169, 78, 0.12);
-
-            text-decoration: none;
+                1px solid rgba(201, 164, 92, 0.14);
 
             transition:
-                transform 0.6s var(--ease),
-                border-color 0.5s var(--ease);
+                padding 0.4s ease,
+                border-color 0.4s ease;
+
         }
 
 
-        .path-card:hover {
+        .path-item::after {
 
-            transform: translateX(8px);
+            content:
+                "";
 
-            border-color: var(--border-strong);
+            position:
+                absolute;
+
+            bottom:
+                -1px;
+
+            left:
+                0;
+
+            width:
+                0;
+
+            height:
+                1px;
+
+            background:
+                var(--landing-gold);
+
+            transition:
+                width 0.5s ease;
+
+        }
+
+
+        .path-item:hover {
+
+            padding-left:
+                10px;
+
+            border-color:
+                rgba(201, 164, 92, 0.25);
+
+        }
+
+
+        .path-item:hover::after {
+
+            width:
+                100%;
+
         }
 
 
         .path-icon {
 
-            display: block;
+            width:
+                28px;
 
-            width: 36px;
-            height: 36px;
+            height:
+                28px;
 
-            margin-bottom: 20px;
+            display:
+                flex;
 
-            color: var(--gold);
+            align-items:
+                center;
 
-            font-size: 1.5rem;
+            justify-content:
+                center;
 
-            line-height: 36px;
+            color:
+                var(--landing-gold);
+
+            font-family:
+                var(--landing-serif);
+
+            font-size:
+                1.2rem;
+
+            opacity:
+                0.85;
+
         }
 
 
-        .path-title {
+        .path-number {
 
-            margin: 0 0 7px;
+            display:
+                block;
 
-            font-family: var(--font-display);
+            font-size:
+                0.58rem;
 
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            letter-spacing:
+                0.2em;
 
-            color: var(--text-primary);
+            color:
+                #716960;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .path-name {
+
+            display:
+                block;
+
+            font-family:
+                var(--landing-serif);
+
+            font-size:
+                clamp(1.5rem, 2.4vw, 2rem);
+
+            font-weight:
+                400;
+
+            color:
+                #ddd4c7;
+
+            transition:
+                color 0.3s ease;
+
         }
 
 
         .path-description {
 
-            margin: 0;
+            display:
+                block;
 
-            font-family: var(--font-body);
+            margin-top:
+                4px;
 
-            font-size: 0.88rem;
+            font-size:
+                0.72rem;
 
-            color: var(--text-secondary);
+            color:
+                #827b73;
+
+            letter-spacing:
+                0.02em;
+
         }
 
 
         .path-arrow {
 
-            position: absolute;
+            font-size:
+                1rem;
 
-            right: 0;
-            bottom: 26px;
-
-            color: var(--gold);
-
-            opacity: 0;
-
-            transform: translateX(-10px);
+            color:
+                #766548;
 
             transition:
-                opacity 0.4s ease,
-                transform 0.4s var(--ease);
+                color 0.3s ease,
+                transform 0.3s ease;
+
         }
 
 
-        .path-card:hover .path-arrow {
+        .path-item:hover
+        .path-name {
 
-            opacity: 1;
+            color:
+                var(--landing-gold-light);
 
-            transform: translateX(0);
+        }
+
+
+        .path-item:hover
+        .path-arrow {
+
+            color:
+                var(--landing-gold);
+
+            transform:
+                translateX(5px);
+
         }
 
 
         /* =========================================================
-           END MESSAGE
+           CLOSING SECTION
            ========================================================= */
 
-        .paths-end {
+        .landing-closing {
 
-            max-width: 1100px;
+            min-height:
+                55vh;
 
-            margin: 130px auto 0;
+            display:
+                flex;
 
-            padding: 0 var(--space-md);
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            text-align:
+                center;
+
+            padding:
+                100px 20px;
+
+            background:
+
+                linear-gradient(
+                    rgba(10, 4, 3, 0.92),
+                    rgba(10, 4, 3, 0.96)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=2200&q=80"
+                );
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
         }
 
 
-        .paths-end-line {
+        .closing-content {
 
-            width: 60px;
-            height: 1px;
+            max-width:
+                750px;
 
-            margin-bottom: 25px;
-
-            background: var(--gold);
         }
 
 
-        .paths-end-text {
+        .closing-small {
 
-            margin: 0;
+            font-size:
+                0.65rem;
 
-            font-family: var(--font-display);
+            letter-spacing:
+                0.4em;
 
-            font-style: italic;
+            color:
+                var(--landing-gold);
 
-            font-size: 1.1rem;
+            text-transform:
+                uppercase;
 
-            color: var(--text-muted);
+        }
+
+
+        .closing-title {
+
+            margin:
+                25px 0 0;
+
+            font-family:
+                var(--landing-serif);
+
+            font-size:
+                clamp(3rem, 6vw, 5.5rem);
+
+            font-weight:
+                300;
+
+            color:
+                #e2d9cc;
+
+        }
+
+
+        .closing-text {
+
+            margin-top:
+                25px;
+
+            font-family:
+                var(--landing-serif);
+
+            font-size:
+                1.25rem;
+
+            font-style:
+                italic;
+
+            color:
+                #989087;
+
         }
 
 
         /* =========================================================
-           TABLET
+           RESPONSIVE
            ========================================================= */
 
         @media (max-width: 800px) {
 
-            .intro-brand {
-
-                top: 25px;
-                left: 24px;
-            }
-
-
-            .intro-caption {
-
-                bottom: 135px;
-            }
-
-
             .welcome-title {
 
                 font-size:
-                    clamp(4rem, 20vw, 7rem);
-            }
+                    clamp(5rem, 22vw, 8rem);
 
-
-            .welcome-inner {
-
-                padding-top: 100px;
-            }
-
-
-            .explore-button {
-
-                min-width: 260px;
-            }
-
-
-            .path-grid {
-
-                grid-template-columns: 1fr;
-
-                column-gap: 0;
-
-                row-gap: 48px;
-
-                margin-top: 65px;
-            }
-
-
-            .paths-section {
-
-                padding-top: 110px;
-            }
-        }
-
-
-        /* =========================================================
-           MOBILE
-           ========================================================= */
-
-        @media (max-width: 500px) {
-
-            .intro-brand {
-
-                font-size: 0.95rem;
-
-                letter-spacing: 0.18em;
-            }
-
-
-            .intro-caption {
-
-                bottom: 125px;
-            }
-
-
-            .skip-button {
-
-                bottom: 35px;
-            }
-
-
-            .intro-progress {
-
-                bottom: 78px;
             }
 
 
             .welcome-description {
 
-                font-size: 0.9rem;
+                margin-top:
+                    55px;
+
             }
 
 
-            .welcome-question {
+            .paths-section {
 
-                margin-top: 42px;
+                padding-top:
+                    100px;
+
+            }
+
+
+            .paths-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .paths-header {
+
+                margin-bottom:
+                    55px;
+
+            }
+
+
+            .path-item {
+
+                min-height:
+                    105px;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .welcome-content {
+
+                padding-top:
+                    100px;
+
+            }
+
+
+            .welcome-eyebrow {
+
+                letter-spacing:
+                    0.32em;
+
+            }
+
+
+            .welcome-description {
+
+                font-size:
+                    0.82rem;
+
             }
 
 
             .explore-button {
 
-                min-width: 230px;
+                min-width:
+                    230px;
 
-                padding: 16px 25px;
-
-                letter-spacing: 0.2em;
             }
 
 
-            .path-card {
+            .paths-title {
 
-                padding-bottom: 22px;
+                font-size:
+                    3.4rem;
+
             }
 
 
-            .path-arrow {
+            .paths-subtitle {
 
-                display: none;
+                font-size:
+                    1.1rem;
+
             }
+
+
+            .path-item {
+
+                grid-template-columns:
+                    35px 1fr 15px;
+
+            }
+
+
+            .path-description {
+
+                font-size:
+                    0.65rem;
+
+            }
+
         }
 
 
         /* =========================================================
-           REDUCED MOTION
+           ACCESSIBILITY
            ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
 
-            *,
-            *::before,
-            *::after {
+            .intro-slide,
+            .cinematic-intro,
+            .intro-content,
+            .explore-button,
+            .path-item,
+            .path-arrow {
 
-                animation-duration: 0.01ms !important;
+                transition:
+                    none !important;
 
-                animation-iteration-count: 1 !important;
+                animation:
+                    none !important;
 
-                transition-duration: 0.01ms !important;
-
-                scroll-behavior: auto !important;
             }
+
         }
 
     </style>
@@ -934,11 +1544,7 @@
 <body>
 
 
-    <!-- =========================================================
-         SHARED NAVBAR
-         ========================================================= -->
-
-    <div id="navbar-slot"></div>
+<div class="kosha-landing">
 
 
     <!-- =========================================================
@@ -946,86 +1552,935 @@
          ========================================================= -->
 
     <section
-        class="landing-intro"
-        id="intro">
+        class="cinematic-intro"
+        id="cinematicIntro"
+    >
 
+        <div class="intro-slides">
 
-        <!-- KOSHA LOGO / BRAND -->
+            <div class="intro-slide active"></div>
 
-        <div class="intro-brand">
-            KOSHA
+            <div class="intro-slide"></div>
+
+            <div class="intro-slide"></div>
+
+            <div class="intro-slide"></div>
+
         </div>
 
 
-        <!-- =====================================================
-             SLIDES
-             ===================================================== -->
+        <div class="intro-content">
+
+            <div class="intro-kosha">
+                KOSHA
+            </div>
 
 
-        <div
-            class="intro-slide active"
-            data-title="INDIA"
-            style="
-                background-image:
-                url('https://images.unsplash.com/photo-1532664189809-02133fee698d?w=2200&q=85');
-            ">
-        </div>
+            <h1 class="intro-title">
+                INDIA
+            </h1>
 
 
-        <div
-            class="intro-slide"
-            data-title="HERITAGE"
-            style="
-                background-image:
-                url('https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=2200&q=85');
-            ">
-        </div>
+            <div class="intro-line"></div>
 
-
-        <div
-            class="intro-slide"
-            data-title="TEXTILES"
-            style="
-                background-image:
-                url('https://images.unsplash.com/photo-1601055283742-8f3d3f6e8c66?w=2200&q=85');
-            ">
-        </div>
-
-
-        <div
-            class="intro-slide"
-            data-title="FESTIVALS"
-            style="
-                background-image:
-                url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?w=2200&q=85');
-            ">
-        </div>
-
-
-        <div
-            class="intro-slide"
-            data-title="CRAFT"
-            style="
-                background-image:
-                url('https://images.unsplash.com/photo-1590736969955-71cc94901144?w=2200&q=85');
-            ">
-        </div>
-
-
-        <!-- =====================================================
-             CINEMATIC OVERLAYS
-             ===================================================== -->
-
-        <div class="intro-overlay"></div>
-
-        <div class="intro-vignette"></div>
-
-
-        <!-- =====================================================
-             IMAGE CAPTION
-             ===================================================== -->
-
-        <div class="intro-caption">
 
             <div
-                class="intro-caption-title"
+                class="intro-caption"
+                id="introCaption"
+            >
+                A Living Heritage
+            </div>
+
+        </div>
+
+
+        <button
+            class="intro-skip"
+            id="skipIntro"
+            type="button"
+        >
+            SKIP
+        </button>
+
+
+        <div class="intro-progress">
+
+            <span class="intro-dot active"></span>
+
+            <span class="intro-dot"></span>
+
+            <span class="intro-dot"></span>
+
+            <span class="intro-dot"></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         MAIN LANDING
+         ========================================================= -->
+
+    <main class="landing-main">
+
+
+        <!-- =====================================================
+             WELCOME TO INDIA
+             ===================================================== -->
+
+        <section
+            class="welcome-section"
+            id="welcome"
+        >
+
+            <div class="welcome-image"></div>
+
+            <div class="welcome-veil"></div>
+
+
+            <div class="welcome-content">
+
+                <div class="welcome-eyebrow">
+                    WELCOME TO
+                </div>
+
+
+                <h1 class="welcome-title">
+                    INDIA
+                </h1>
+
+
+                <p class="welcome-description">
+                    A land of stories, traditions, colours and
+                    centuries of living heritage.
+                </p>
+
+
+                <div class="welcome-question">
+                    Where will your journey begin?
+                </div>
+
+
+                <button
+                    class="explore-button"
+                    id="exploreIndia"
+                    type="button"
+                >
+
+                    <span>
+                        EXPLORE INDIA
+                    </span>
+
+                    <span class="explore-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CHOOSE YOUR PATH
+             ===================================================== -->
+
+        <section
+            class="paths-section"
+            id="paths"
+            style="display: none;"
+        >
+
+            <div class="paths-container">
+
+
+                <header class="paths-header">
+
+                    <div class="paths-chapter">
+                        CHAPTER I
+                    </div>
+
+
+                    <h2 class="paths-title">
+                        Choose Your Path
+                    </h2>
+
+
+                    <p class="paths-subtitle">
+                        Begin your journey through the soul of India.
+                    </p>
+
+
+                    <div class="paths-line"></div>
+
+                </header>
+
+
+
+                <div class="paths-grid">
+
+
+                    <!-- =================================================
+                         01 — EXPLORE BY STATE
+                         ================================================= -->
+
+                    <a
+                        href="states.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ◇
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                01
+                            </span>
+
+
+                            <span class="path-name">
+                                Explore by State
+                            </span>
+
+
+                            <span class="path-description">
+                                Regions and their worlds
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         02 — PERFORMING ARTS
+                         ================================================= -->
+
+                    <a
+                        href="coming_soon.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ◌
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                02
+                            </span>
+
+
+                            <span class="path-name">
+                                Performing Arts
+                            </span>
+
+
+                            <span class="path-description">
+                                Theatre, dance and ritual
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         03 — FOOD & CUISINE
+                         ================================================= -->
+
+                    <a
+                        href="food.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ◈
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                03
+                            </span>
+
+
+                            <span class="path-name">
+                                Food &amp; Cuisine
+                            </span>
+
+
+                            <span class="path-description">
+                                Kitchens, flavours and memory
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         04 — ART & CRAFTS
+                         ================================================= -->
+
+                    <a
+                        href="coming_soon.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ✦
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                04
+                            </span>
+
+
+                            <span class="path-name">
+                                Art &amp; Crafts
+                            </span>
+
+
+                            <span class="path-description">
+                                Hands that make
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         05 — FESTIVALS & TRADITIONS
+                         ================================================= -->
+
+                    <a
+                        href="festivals.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ✧
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                05
+                            </span>
+
+
+                            <span class="path-name">
+                                Festivals &amp; Traditions
+                            </span>
+
+
+                            <span class="path-description">
+                                Days that glow
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         06 — STORIES & EPICS
+                         ================================================= -->
+
+                    <a
+                        href="stories.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ॐ
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                06
+                            </span>
+
+
+                            <span class="path-name">
+                                Stories &amp; Epics
+                            </span>
+
+
+                            <span class="path-description">
+                                Voices carried forward
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =================================================
+                         07 — MUSIC & SOUNDS
+                         ================================================= -->
+
+                    <a
+                        href="coming_soon.html"
+                        class="path-item"
+                    >
+
+                        <div class="path-icon">
+                            ♪
+                        </div>
+
+
+                        <div>
+
+                            <span class="path-number">
+                                07
+                            </span>
+
+
+                            <span class="path-name">
+                                Music &amp; Sounds
+                            </span>
+
+
+                            <span class="path-description">
+                                Ragas, rhythm and resonance
+                            </span>
+
+                        </div>
+
+
+                        <span class="path-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CLOSING SECTION
+             ===================================================== -->
+
+        <section
+            class="landing-closing"
+            id="landingClosing"
+            style="display: none;"
+        >
+
+            <div class="closing-content">
+
+                <div class="closing-small">
+                    KOSHA
+                </div>
+
+
+                <h2 class="closing-title">
+                    India is not merely remembered.
+                </h2>
+
+
+                <p class="closing-text">
+                    It is lived, shared and carried forward.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   KOSHA — LANDING PAGE JAVASCRIPT
+   ========================================================= */
+
+
+/* =========================================================
+   CINEMATIC INTRO ELEMENTS
+   ========================================================= */
+
+const intro =
+    document.getElementById("cinematicIntro");
+
+
+const slides =
+    document.querySelectorAll(".intro-slide");
+
+
+const dots =
+    document.querySelectorAll(".intro-dot");
+
+
+const caption =
+    document.getElementById("introCaption");
+
+
+const skipButton =
+    document.getElementById("skipIntro");
+
+
+const captions = [
+
+    "A Living Heritage",
+
+    "Stories Passed Down",
+
+    "Hands That Create",
+
+    "Traditions That Endure"
+
+];
+
+
+let currentSlide = 0;
+
+let introTimer = null;
+
+
+/* =========================================================
+   SHOW SLIDE
+   ========================================================= */
+
+function showSlide(index) {
+
+    slides.forEach(
+        function (slide, i) {
+
+            slide.classList.toggle(
+                "active",
+                i === index
+            );
+
+        }
+    );
+
+
+    dots.forEach(
+        function (dot, i) {
+
+            dot.classList.toggle(
+                "active",
+                i === index
+            );
+
+        }
+    );
+
+
+    if (caption) {
+
+        caption.textContent =
+            captions[index];
+
+    }
+
+}
+
+
+/* =========================================================
+   NEXT SLIDE
+   ========================================================= */
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (
+        currentSlide >=
+        slides.length
+    ) {
+
+        finishIntro();
+
+        return;
+
+    }
+
+
+    showSlide(currentSlide);
+
+}
+
+
+/* =========================================================
+   FINISH INTRO
+   ========================================================= */
+
+function finishIntro() {
+
+    if (introTimer) {
+
+        clearInterval(
+            introTimer
+        );
+
+        introTimer = null;
+
+    }
+
+
+    if (intro) {
+
+        intro.classList.add(
+            "is-hidden"
+        );
+
+    }
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================================
+   START INTRO
+   ========================================================= */
+
+function startIntro() {
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    introTimer = setInterval(
+        nextSlide,
+        2600
+    );
+
+}
+
+
+/* =========================================================
+   SKIP INTRO
+   ========================================================= */
+
+if (skipButton) {
+
+    skipButton.addEventListener(
+        "click",
+        finishIntro
+    );
+
+}
+
+
+/* =========================================================
+   EXPLORE INDIA BUTTON
+   ========================================================= */
+
+const exploreButton =
+    document.getElementById(
+        "exploreIndia"
+    );
+
+
+const pathsSection =
+    document.getElementById(
+        "paths"
+    );
+
+
+const closingSection =
+    document.getElementById(
+        "landingClosing"
+    );
+
+
+if (exploreButton) {
+
+    exploreButton.addEventListener(
+        "click",
+        function () {
+
+
+            /* ---------------------------------------------
+               Show Choose Your Path
+               --------------------------------------------- */
+
+            if (pathsSection) {
+
+                pathsSection.style.display =
+                    "block";
+
+            }
+
+
+            /* ---------------------------------------------
+               Show closing section
+               --------------------------------------------- */
+
+            if (closingSection) {
+
+                closingSection.style.display =
+                    "flex";
+
+            }
+
+
+            /* ---------------------------------------------
+               Scroll to Choose Your Path
+               --------------------------------------------- */
+
+            setTimeout(
+                function () {
+
+                    if (pathsSection) {
+
+                        pathsSection.scrollIntoView({
+
+                            behavior:
+                                "smooth",
+
+                            block:
+                                "start"
+
+                        });
+
+                    }
+
+                },
+                50
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CHECK URL
+   =========================================================
+
+   When another page sends the user to:
+
+       index.html?paths=true
+
+   the page will:
+
+       - skip cinematic intro
+       - hide Welcome to India
+       - show Choose Your Path
+       - show closing section
+       - scroll directly to Choose Your Path
+
+   ========================================================= */
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const returningToPaths =
+    urlParams.get("paths") === "true";
+
+
+/* =========================================================
+   RETURNING DIRECTLY TO PATHS
+   ========================================================= */
+
+if (returningToPaths) {
+
+
+    /* ---------------------------------------------
+       Stop cinematic intro
+       --------------------------------------------- */
+
+    if (intro) {
+
+        intro.style.display =
+            "none";
+
+    }
+
+
+    if (introTimer) {
+
+        clearInterval(
+            introTimer
+        );
+
+        introTimer = null;
+
+    }
+
+
+    /* ---------------------------------------------
+       Enable normal scrolling
+       --------------------------------------------- */
+
+    document.body.style.overflow =
+        "";
+
+
+    /* ---------------------------------------------
+       Hide Welcome section
+       --------------------------------------------- */
+
+    const welcomeSection =
+        document.getElementById(
+            "welcome"
+        );
+
+
+    if (welcomeSection) {
+
+        welcomeSection.style.display =
+            "none";
+
+    }
+
+
+    /* ---------------------------------------------
+       Show Choose Your Path
+       --------------------------------------------- */
+
+    if (pathsSection) {
+
+        pathsSection.style.display =
+            "block";
+
+    }
+
+
+    /* ---------------------------------------------
+       Show closing section
+       --------------------------------------------- */
+
+    if (closingSection) {
+
+        closingSection.style.display =
+            "flex";
+
+    }
+
+
+    /* ---------------------------------------------
+       Scroll directly to Choose Your Path
+       --------------------------------------------- */
+
+    window.addEventListener(
+        "load",
+        function () {
+
+            setTimeout(
+                function () {
+
+                    if (pathsSection) {
+
+                        pathsSection.scrollIntoView({
+
+                            behavior:
+                                "auto",
+
+                            block:
+                                "start"
+
+                        });
+
+                    }
+
+                },
+                100
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NORMAL FIRST VISIT
+   ========================================================= */
+
+else {
+
+    window.addEventListener(
+        "load",
+        function () {
+
+            startIntro();
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
