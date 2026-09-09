@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kosha — Coming Soon</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .coming-soon-page {
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(100, 34, 25, 0.16),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    180deg,
+                    #030303 0%,
+                    #090504 55%,
+                    #0b0605 100%
+                );
+
+            position: relative;
+        }
+
+
+        .coming-soon-content {
+
+            width: min(90%, 800px);
+
+            animation:
+                comingIn 1.2s
+                cubic-bezier(0.16, 1, 0.3, 1)
+                forwards;
+
+        }
+
+
+        .coming-soon-kosha {
+
+            font-family:
+                var(--font-display);
+
+            font-size: 0.9rem;
+
+            letter-spacing: 0.45em;
+
+            color: var(--gold);
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .coming-soon-line {
+
+            width: 55px;
+
+            height: 1px;
+
+            background:
+                var(--gold);
+
+            margin:
+                0 auto 35px;
+
+            opacity: 0.7;
+
+        }
+
+
+        .coming-soon-title {
+
+            margin: 0;
+
+            font-family:
+                var(--font-display);
+
+            font-size:
+                clamp(
+                    4rem,
+                    9vw,
+                    7rem
+                );
+
+            font-weight: 300;
+
+            line-height: 0.9;
+
+            color:
+                var(--gold-soft);
+
+        }
+
+
+        .coming-soon-text {
+
+            margin:
+                35px auto 0;
+
+            max-width: 580px;
+
+            font-family:
+                var(--font-display);
+
+            font-size: 1.35rem;
+
+            font-style: italic;
+
+            line-height: 1.6;
+
+            color:
+                var(--text-secondary);
+
+        }
+
+
+        .coming-soon-subtext {
+
+            margin-top: 28px;
+
+            font-family:
+                var(--font-sans);
+
+            font-size: 0.65rem;
+
+            letter-spacing: 0.35em;
+
+            text-transform: uppercase;
+
+            color:
+                var(--text-muted);
+
+        }
+
+
+        .back-button {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 48px;
+
+            min-height: 50px;
+
+            padding:
+                0 28px;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            color:
+                var(--gold-soft);
+
+            font-family:
+                var(--font-sans);
+
+            font-size: 0.65rem;
+
+            letter-spacing: 0.32em;
+
+            text-transform: uppercase;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+
+        .back-button:hover {
+
+            background:
+                rgba(
+                    201,
+                    160,
+                    82,
+                    0.09
+                );
+
+            border-color:
+                var(--gold);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        @keyframes comingIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+        .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 34px;
+    padding: 14px 26px;
+
+    border: 1px solid rgba(201, 160, 82, 0.45);
+
+    color: #e0c378;
+    background: transparent;
+
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-arrow {
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 0;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+    color: #f2ede3;
+    background: rgba(201, 160, 82, 0.08);
+    border-color: #c9a052;
+    transform: translateY(-2px);
+}
+
+.back-link:hover .back-arrow {
+    transform: translateX(-4px);
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="coming-soon-page">
+
+        <div class="coming-soon-content">
+
+            <div class="coming-soon-kosha">
+                KOSHA
+            </div>
+
+
+            <div class="coming-soon-line"></div>
+
+
+            <h1 class="coming-soon-title">
+                Coming Soon
+            </h1>
+
+
+            <p class="coming-soon-text">
+                This chapter of India's living heritage
+                is still being woven.
+            </p>
+
+
+            <div class="coming-soon-subtext">
+                A new story is taking shape
+            </div>
+
+
+            <a
+                href="index.html?paths=true"
+                class="back-link"
+            >
+            <span class="back-arrow"></span>
+                ← Back to Kosha
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

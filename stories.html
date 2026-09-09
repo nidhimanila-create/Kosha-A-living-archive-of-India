@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kosha — Stories & Epics</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Shared Kosha Design System -->
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
+
+    <style>
+
+        /* =========================================================
+           KOSHA — STORIES & EPICS
+           ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(111, 30, 23, 0.14),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    180deg,
+                    #050303 0%,
+                    #090504 55%,
+                    #0b0605 100%
+                );
+
+            color: #f2ede3;
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================================================
+           PAGE
+           ========================================================= */
+
+        .stories-page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 100px 24px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        /* Subtle cinematic glow */
+
+        .stories-page::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 700px;
+            height: 700px;
+
+            top: -300px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(150, 55, 35, 0.10),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .stories-container {
+
+            width:
+                min(1100px, 100%);
+
+            position: relative;
+
+            z-index: 1;
+
+            text-align: center;
+
+        }
+
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .stories-eyebrow {
+
+            color:
+                #c9a052;
+
+            font-size:
+                10px;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                0.42em;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .stories-line {
+
+            width:
+                60px;
+
+            height:
+                1px;
+
+            background:
+                #c9a052;
+
+            margin:
+                0 auto 35px;
+
+            opacity:
+                0.8;
+
+        }
+
+
+        .stories-title {
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(4rem, 8vw, 7rem);
+
+            font-weight:
+                300;
+
+            line-height:
+                0.9;
+
+            color:
+                #e0c378;
+
+            letter-spacing:
+                -0.02em;
+
+        }
+
+
+        .stories-subtitle {
+
+            margin-top:
+                30px;
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(1.1rem, 2vw, 1.4rem);
+
+            font-style:
+                italic;
+
+            color:
+                #aaa297;
+
+        }
+
+
+        /* =========================================================
+           EPIC OPTIONS
+           ========================================================= */
+
+        .epic-options {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                32px;
+
+            margin-top:
+                75px;
+
+        }
+
+
+        .epic-option {
+
+            position:
+                relative;
+
+            min-height:
+                320px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                50px 35px;
+
+            border:
+                1px solid
+                rgba(224, 195, 120, 0.18);
+
+            background:
+                rgba(20, 10, 8, 0.42);
+
+            overflow:
+                hidden;
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.5s ease,
+                background 0.5s ease;
+
+        }
+
+
+        /* Gold line appearing at bottom */
+
+        .epic-option::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            bottom:
+                0;
+
+            left:
+                0;
+
+            width:
+                0;
+
+            height:
+                1px;
+
+            background:
+                #c9a052;
+
+            transition:
+                width 0.5s ease;
+
+        }
+
+
+        .epic-option:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(224, 195, 120, 0.48);
+
+            background:
+                rgba(40, 17, 13, 0.58);
+
+        }
+
+
+        .epic-option:hover::after {
+
+            width:
+                100%;
+
+        }
+
+
+        /* =========================================================
+           NUMBER
+           ========================================================= */
+
+        .epic-number {
+
+            position:
+                absolute;
+
+            top:
+                22px;
+
+            left:
+                25px;
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                0.3em;
+
+            color:
+                #716b63;
+
+        }
+
+
+        /* =========================================================
+           SYMBOL
+           ========================================================= */
+
+        .epic-symbol {
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            margin-bottom:
+                20px;
+
+            border:
+                1px solid
+                rgba(201, 160, 82, 0.32);
+
+            border-radius:
+                50%;
+
+            color:
+                #c9a052;
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size:
+                1.5rem;
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.5s ease;
+
+        }
+
+
+        .epic-option:hover
+        .epic-symbol {
+
+            transform:
+                scale(1.08);
+
+            border-color:
+                rgba(201, 160, 82, 0.65);
+
+        }
+
+
+        /* =========================================================
+           EPIC NAME
+           ========================================================= */
+
+        .epic-name {
+
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2.5rem, 5vw, 4rem);
+
+            font-weight:
+                300;
+
+            color:
+                #e0c378;
+
+            line-height:
+                1;
+
+        }
+
+
+        /* =========================================================
+           DESCRIPTION
+           ========================================================= */
+
+        .epic-description {
+
+            margin-top:
+                14px;
+
+            max-width:
+                380px;
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.6;
+
+            color:
+                #827b73;
+
+            letter-spacing:
+                0.02em;
+
+        }
+
+
+        /* =========================================================
+           ARROW
+           ========================================================= */
+
+        .epic-arrow {
+
+            margin-top:
+                28px;
+
+            color:
+                #9a7941;
+
+            font-size:
+                1.1rem;
+
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease;
+
+        }
+
+
+        .epic-option:hover
+        .epic-arrow {
+
+            transform:
+                translateX(7px);
+
+            color:
+                #e0c378;
+
+        }
+
+
+        /* =========================================================
+           BACK TO KOSHA
+           ========================================================= */
+
+        .back-link {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                12px;
+
+            margin-top:
+                65px;
+
+            padding:
+                14px 26px;
+
+            border:
+                1px solid
+                rgba(201, 160, 82, 0.45);
+
+            background:
+                transparent;
+
+            color:
+                #e0c378;
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            font-size:
+                10px;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                0.28em;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                color 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+
+        .back-arrow {
+
+            font-size:
+                17px;
+
+            line-height:
+                1;
+
+            letter-spacing:
+                0;
+
+            transition:
+                transform 0.3s ease;
+
+        }
+
+
+        .back-link:hover {
+
+            color:
+                #f2ede3;
+
+            background:
+                rgba(201, 160, 82, 0.08);
+
+            border-color:
+                #c9a052;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .back-link:hover
+        .back-arrow {
+
+            transform:
+                translateX(-4px);
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .stories-page {
+
+                padding:
+                    80px 18px;
+
+            }
+
+
+            .epic-options {
+
+                grid-template-columns:
+                    1fr;
+
+                margin-top:
+                    55px;
+
+            }
+
+
+            .stories-title {
+
+                font-size:
+                    4rem;
+
+            }
+
+
+            .stories-subtitle {
+
+                font-size:
+                    1.15rem;
+
+            }
+
+
+            .epic-option {
+
+                min-height:
+                    280px;
+
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .stories-title {
+
+                font-size:
+                    3.4rem;
+
+            }
+
+
+            .epic-name {
+
+                font-size:
+                    2.5rem;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+           ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .epic-option,
+            .epic-symbol,
+            .epic-arrow,
+            .back-link,
+            .back-arrow {
+
+                transition:
+                    none !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="stories-page">
+
+
+    <div class="stories-container">
+
+
+        <!-- =====================================================
+             HEADER
+             ===================================================== -->
+
+        <div class="stories-eyebrow">
+            CHAPTER II
+        </div>
+
+
+        <div class="stories-line"></div>
+
+
+        <h1 class="stories-title">
+            Stories &amp; Epics
+        </h1>
+
+
+        <p class="stories-subtitle">
+            Two great epics. Countless stories carried through generations.
+        </p>
+
+
+
+        <!-- =====================================================
+             EPIC OPTIONS
+             ===================================================== -->
+
+        <div class="epic-options">
+
+
+            <!-- =================================================
+                 RAMAYANA
+                 ================================================= -->
+
+            <a
+                href="ramayana.html"
+                class="epic-option"
+            >
+
+                <span class="epic-number">
+                    01
+                </span>
+
+
+                <div class="epic-symbol">
+                    ॐ
+                </div>
+
+
+                <h2 class="epic-name">
+                    Ramayana
+                </h2>
+
+
+                <p class="epic-description">
+                    Dharma, devotion and the journey of Rama
+                </p>
+
+
+                <span class="epic-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 MAHABHARATA
+                 ================================================= -->
+
+            <a
+                href="mahabharata.html"
+                class="epic-option"
+            >
+
+                <span class="epic-number">
+                    02
+                </span>
+
+
+                <div class="epic-symbol">
+                    ॐ
+                </div>
+
+
+                <h2 class="epic-name">
+                    Mahabharata
+                </h2>
+
+
+                <p class="epic-description">
+                    Heroes, choices and the great epic
+                </p>
+
+
+                <span class="epic-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =====================================================
+             BACK TO KOSHA
+             ===================================================== -->
+
+        <a
+            href="index.html?paths=true"
+            class="back-link"
+        >
+
+            <span class="back-arrow">
+                ←
+            </span>
+
+            Back to Kosha
+
+        </a>
+
+
+    </div>
+
+
+</main>
+
+
+</body>
+
+</html>
