@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kosha — Food & Cuisine</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar-slot"></div>
+
+
+    <!-- HEADER -->
+    <section class="section" style="padding-top: 150px;">
+
+        <div class="container">
+
+            <p class="eyebrow reveal">
+                FOOD • FLAVOUR • HERITAGE
+            </p>
+
+            <h1 class="reveal">
+                Food & Cuisine
+            </h1>
+
+            <p class="lede reveal" style="margin-top: 20px;">
+                Explore dishes from across India and discover
+                the stories, ingredients and traditions behind them.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOD SECTION -->
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="reveal">
+                Flavours Across India
+            </h2>
+
+
+            <div class="card-grid" style="margin-top: 40px;">
+
+
+                <!-- MASALA DOSA -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('dosaModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                            background-image: url(
+                                'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1200&q=80'
+                            );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            SOUTH INDIA
+                        </span>
+
+                        <h3 class="card__title">
+                            Masala Dosa
+                        </h3>
+
+                        <p class="card__desc">
+                            A crisp fermented crepe filled with
+                            spiced potato and served with chutney.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- BIRYANI -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('biryaniModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                            background-image: url(
+                                'image/biryani.jpg'
+                            );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            RICE DISH
+                        </span>
+
+                        <h3 class="card__title">
+                            Biryani
+                        </h3>
+
+                        <p class="card__desc">
+                            Fragrant rice prepared with spices,
+                            herbs and richly seasoned ingredients.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- DHOKLA -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('dhoklaModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                            background-image: url(
+                                'image/dhokla.jpg'
+                            );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            GUJARAT
+                        </span>
+
+                        <h3 class="card__title">
+                            Dhokla
+                        </h3>
+
+                        <p class="card__desc">
+                            A soft steamed savoury food made
+                            from fermented batter.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- LITTI CHOKHA -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('littiModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                            background-image: url(
+                                'image/litti chokha.jpg'
+                            );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            BIHAR
+                        </span>
+
+                        <h3 class="card__title">
+                            Litti Chokha
+                        </h3>
+
+                        <p class="card__desc">
+                            Roasted wheat balls served with
+                            a rustic vegetable preparation.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- BUTTER CHICKEN -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('butterChickenModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                            background-image: url(
+                                'image/butter chicken.jpg'
+                            );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            NORTH INDIA
+                        </span>
+
+                        <h3 class="card__title">
+                            Butter Chicken
+                        </h3>
+
+                        <p class="card__desc">
+                            Chicken cooked in a rich
+                            tomato-based spiced sauce.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         MASALA DOSA MODAL
+         ================================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="dosaModal"
+        style="display:none;"
+        onclick="closeModalOutside(event, 'dosaModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('dosaModal')"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                SOUTH INDIA
+            </p>
+
+            <h3>
+                Masala Dosa
+            </h3>
+
+            <img
+                src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=80"
+                alt="Masala dosa"
+                style="margin-top:20px;"
+            >
+
+            <p style="margin-top:20px;">
+                Masala dosa is a popular South Indian dish made
+                from fermented rice and lentil batter. It is
+                commonly prepared as a thin, crisp crepe with
+                a spiced potato filling.
+            </p>
+
+            <p style="margin-top:18px;">
+                <strong>Why it matters:</strong>
+                It reflects the importance of fermentation,
+                local ingredients and shared food traditions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         BIRYANI MODAL
+         ================================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="biryaniModal"
+        style="display:none;"
+        onclick="closeModalOutside(event, 'biryaniModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('biryaniModal')"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                RICE DISH
+            </p>
+
+            <h3>
+                Biryani
+            </h3>
+
+            <img
+                src="image/biryani.jpg"
+                alt="Biryani"
+                style="margin-top:20px;"
+            >
+
+            <p style="margin-top:20px;">
+                Biryani is a fragrant rice dish prepared in
+                many regional styles across India. Different
+                versions use different combinations of spices,
+                herbs and ingredients.
+            </p>
+
+            <p style="margin-top:18px;">
+                <strong>Why it matters:</strong>
+                Biryani shows how food traditions can develop
+                differently across regions while sharing
+                common culinary influences.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         DHOKLA MODAL
+         ================================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="dhoklaModal"
+        style="display:none;"
+        onclick="closeModalOutside(event, 'dhoklaModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('dhoklaModal')"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                GUJARAT
+            </p>
+
+            <h3>
+                Dhokla
+            </h3>
+
+            <img
+                src="image/dhokla.jpg"
+                alt="Dhokla"
+                style="margin-top:20px;"
+            >
+
+            <p style="margin-top:20px;">
+                Dhokla is a soft steamed savoury food commonly
+                associated with Gujarati cuisine. Fermentation
+                contributes to its light texture.
+            </p>
+
+            <p style="margin-top:18px;">
+                <strong>Why it matters:</strong>
+                It represents the variety of vegetarian foods
+                and fermentation techniques found in Indian cuisine.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         LITTI CHOKHA MODAL
+         ================================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="littiModal"
+        style="display:none;"
+        onclick="closeModalOutside(event, 'littiModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('littiModal')"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                BIHAR
+            </p>
+
+            <h3>
+                Litti Chokha
+            </h3>
+
+            <img
+                src="image/litti chokha.jpg"
+                alt="Litti Chokha"
+                style="margin-top:20px;"
+            >
+
+            <p style="margin-top:20px;">
+                Litti Chokha is a traditional dish associated
+                with Bihar and neighbouring regions. Litti is
+                a roasted wheat preparation often filled with
+                sattu and served with chokha.
+            </p>
+
+            <p style="margin-top:18px;">
+                <strong>Why it matters:</strong>
+                It reflects the connection between local
+                ingredients, everyday cooking and regional
+                food traditions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         BUTTER CHICKEN MODAL
+         ================================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="butterChickenModal"
+        style="display:none;"
+        onclick="closeModalOutside(event, 'butterChickenModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('butterChickenModal')"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                NORTH INDIA
+            </p>
+
+            <h3>
+                Butter Chicken
+            </h3>
+
+            <img
+                src="image/butter chicken.jpg"
+                alt="Butter chicken"
+                style="margin-top:20px;"
+            >
+
+            <p style="margin-top:20px;">
+                Butter chicken is a well-known North Indian dish
+                featuring chicken cooked in a rich tomato-based
+                sauce with spices and dairy.
+            </p>
+
+            <p style="margin-top:18px;">
+                <strong>Why it matters:</strong>
+                It is an example of how regional dishes can
+                travel beyond their original communities and
+                become widely recognised.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div id="footer-slot"></div>
+
+
+
+    <!-- SHARED JAVASCRIPT -->
+
+    <script src="include.js"></script>
+
+    <script src="reveal.js"></script>
+
+
+
+    <!-- MODAL JAVASCRIPT -->
+
+    <script>
+
+        function openModal(modalId) {
+
+            const modal =
+                document.getElementById(modalId);
+
+            if (modal) {
+
+                modal.style.display = "flex";
+
+                document.body.style.overflow = "hidden";
+
+            }
+
+        }
+
+
+        function closeModal(modalId) {
+
+            const modal =
+                document.getElementById(modalId);
+
+            if (modal) {
+
+                modal.style.display = "none";
+
+                document.body.style.overflow = "";
+
+            }
+
+        }
+
+
+        function closeModalOutside(
+            event,
+            modalId
+        ) {
+
+            if (
+                event.target.id === modalId
+            ) {
+
+                closeModal(modalId);
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    document
+                        .querySelectorAll(".modal-backdrop")
+                        .forEach(function(modal) {
+
+                            modal.style.display = "none";
+
+                        });
+
+                    document.body.style.overflow = "";
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
