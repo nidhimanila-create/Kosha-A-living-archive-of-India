@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State Detail — Kosha</title>
+
+  <!-- Shared fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared team styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Shared Navbar Slot -->
+  <div id="navbar-slot"></div>
+
+  <!-- HERO SECTION -->
+  <section class="section" style="padding-top: 140px;">
+    <div class="container">
+      <p class="eyebrow reveal">EXPLORE STATE</p>
+      <h1 id="state-name" class="reveal">Loading...</h1>
+      <p id="state-description" class="lede reveal" style="margin-top: 16px;">
+        Please wait while we load the cultural details...
+      </p>
+    </div>
+  </section>
+
+  <!-- QUICK OVERVIEW SECTION -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow reveal">CULTURAL SNAPSHOT</p>
+      <h2 class="reveal">Quick Overview</h2>
+
+      <div class="summary-box reveal" style="margin-top: 24px; padding: 24px; background: rgba(0,0,0,0.03); border-radius: 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <div><strong>Heritage:</strong> <span id="heritage">---</span></div>
+          <div><strong>Performing Arts:</strong> <span id="arts">---</span></div>
+          <div><strong>Crafts:</strong> <span id="crafts">---</span></div>
+          <div><strong>Cuisine:</strong> <span id="cuisine">---</span></div>
+          <div><strong>Festivals:</strong> <span id="festivals">---</span></div>
+          <div><strong>Literature:</strong> <span id="literature">---</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC CARDS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div id="cards-container"></div>
+    </div>
+  </section>
+
+  <!-- Shared Footer Slot -->
+  <div id="footer-slot"></div>
+
+  <!-- JavaScript Dependencies -->
+  <script src="include.js"></script>
+  <script src="reveal.js"></script>
+  <script src="state.js"></script>
+
+</body>
+</html>
