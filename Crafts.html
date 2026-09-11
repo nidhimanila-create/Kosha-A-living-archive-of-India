@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kosha — Art & Crafts</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+    <div id="navbar-slot"></div>
+
+
+    <!-- HEADER -->
+
+    <section
+        class="section"
+        style="padding-top:140px;"
+    >
+
+        <div class="container">
+
+            <p class="eyebrow reveal">
+                ART • CRAFT • HERITAGE
+            </p>
+
+            <h1 class="reveal">
+                Art & Crafts
+            </h1>
+
+            <p
+                class="lede reveal"
+                style="margin-top:16px;"
+            >
+                Explore traditional art forms and crafts that preserve
+                stories, skills, materials and creative traditions
+                passed through generations.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CRAFT GRID -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="reveal">
+                Creative Traditions of India
+            </h2>
+
+
+            <div
+                class="card-grid"
+                style="margin-top:40px;"
+            >
+
+
+                <!-- MADHUBANI -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('madhubaniModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                        background-image:url(
+                        'Image/madhubhani.jpg'
+                        );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            BIHAR
+                        </span>
+
+                        <h3
+                            class="card__title"
+                            style="margin-top:12px;"
+                        >
+                            Madhubani Painting
+                        </h3>
+
+                        <p class="card__desc">
+                            A richly detailed painting tradition
+                            associated with the Mithila region.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- WARLI -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('warliModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                        background-image:url(
+                        'Image/warli.jpg'
+                        );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            MAHARASHTRA
+                        </span>
+
+                        <h3
+                            class="card__title"
+                            style="margin-top:12px;"
+                        >
+                            Warli Art
+                        </h3>
+
+                        <p class="card__desc">
+                            A distinctive tribal painting tradition
+                            using simple geometric forms.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PATTACHITRA -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('pattachitraModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                        background-image:url(
+                        'Image/pattachitra.jpg'
+                        );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            ODISHA
+                        </span>
+
+                        <h3
+                            class="card__title"
+                            style="margin-top:12px;"
+                        >
+                            Pattachitra
+                        </h3>
+
+                        <p class="card__desc">
+                            Traditional paintings known for detailed
+                            compositions and mythological themes.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PHULKARI -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('phulkariModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                        background-image:url(
+                        'Image/phulkari.jpg'
+                        );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            PUNJAB
+                        </span>
+
+                        <h3
+                            class="card__title"
+                            style="margin-top:12px;"
+                        >
+                            Phulkari
+                        </h3>
+
+                        <p class="card__desc">
+                            Decorative embroidery traditionally
+                            created with colourful thread.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- KALAMKARI -->
+
+                <a
+                    href="#"
+                    class="card reveal"
+                    onclick="openModal('kalamkariModal'); return false;"
+                >
+
+                    <div
+                        class="card__bg"
+                        style="
+                        background-image:url(
+                        'Image/kalamkari.jpg'
+                        );
+                        "
+                    ></div>
+
+                    <div class="card__overlay"></div>
+
+                    <div class="card__content">
+
+                        <span class="tag">
+                            TEXTILE ART
+                        </span>
+
+                        <h3
+                            class="card__title"
+                            style="margin-top:12px;"
+                        >
+                            Kalamkari
+                        </h3>
+
+                        <p class="card__desc">
+                            A textile art tradition involving
+                            hand-drawing and natural dyes.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- MADHUBANI -->
+    <!-- ========================= -->
+
+    <div
+        class="modal-backdrop"
+        id="madhubaniModal"
+        style="display:none;"
+        onclick="closeModalOutside(event,'madhubaniModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('madhubaniModal')"
+            >
+                ✕
+            </button>
+
+            <p class="eyebrow">
+                BIHAR
+            </p>
+
+            <h3>
+                Madhubani Painting
+            </h3>
+
+            <img
+                src="Image/madhubhani.jpg"
+                alt="Traditional Indian painting"
+                style="width:100%;margin-top:20px;"
+            >
+
+            <p style="margin-top:16px;">
+                Madhubani painting, also known as Mithila painting,
+                is associated with the Mithila region. Traditional
+                compositions often feature nature, people, animals
+                and cultural or religious themes.
+            </p>
+
+            <p style="margin-top:16px;">
+                <strong>Why it matters:</strong>
+                It preserves visual storytelling and artistic
+                knowledge passed between generations.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- WARLI -->
+
+    <div
+        class="modal-backdrop"
+        id="warliModal"
+        style="display:none;"
+        onclick="closeModalOutside(event,'warliModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('warliModal')"
+            >
+                ✕
+            </button>
+
+            <p class="eyebrow">
+                MAHARASHTRA
+            </p>
+
+            <h3>
+                Warli Art
+            </h3>
+
+            <img
+                src="Image/warli.jpg"
+                alt="Traditional art"
+                style="width:100%;margin-top:20px;"
+            >
+
+            <p style="margin-top:16px;">
+                Warli art is associated with the Warli communities
+                of Maharashtra. It is recognised for its use of
+                simple geometric forms to represent people,
+                animals, nature and community life.
+            </p>
+
+            <p style="margin-top:16px;">
+                <strong>Why it matters:</strong>
+                It demonstrates how everyday life and cultural
+                knowledge can be preserved through visual art.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PATTACHITRA -->
+
+    <div
+        class="modal-backdrop"
+        id="pattachitraModal"
+        style="display:none;"
+        onclick="closeModalOutside(event,'pattachitraModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('pattachitraModal')"
+            >
+                ✕
+            </button>
+
+            <p class="eyebrow">
+                ODISHA
+            </p>
+
+            <h3>
+                Pattachitra
+            </h3>
+
+            <img
+                src="Image/pattachitra.jpg"
+                alt="Indian traditional artwork"
+                style="width:100%;margin-top:20px;"
+            >
+
+            <p style="margin-top:16px;">
+                Pattachitra is a traditional painting style associated
+                with Odisha. The art is known for detailed compositions,
+                decorative borders and themes drawn from cultural and
+                religious traditions.
+            </p>
+
+            <p style="margin-top:16px;">
+                <strong>Why it matters:</strong>
+                It combines storytelling, craftsmanship and visual
+                traditions into a distinctive art form.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHULKARI -->
+
+    <div
+        class="modal-backdrop"
+        id="phulkariModal"
+        style="display:none;"
+        onclick="closeModalOutside(event,'phulkariModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('phulkariModal')"
+            >
+                ✕
+            </button>
+
+            <p class="eyebrow">
+                PUNJAB
+            </p>
+
+            <h3>
+                Phulkari
+            </h3>
+
+            <img
+                src="Image/phulkari.jpg"
+                alt="Textile embroidery"
+                style="width:100%;margin-top:20px;"
+            >
+
+            <p style="margin-top:16px;">
+                Phulkari is a traditional embroidery practice associated
+                with Punjab. Floral and geometric patterns are created
+                through detailed needlework.
+            </p>
+
+            <p style="margin-top:16px;">
+                <strong>Why it matters:</strong>
+                It reflects textile craftsmanship and the role of
+                embroidery in expressing creativity and cultural identity.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- KALAMKARI -->
+
+    <div
+        class="modal-backdrop"
+        id="kalamkariModal"
+        style="display:none;"
+        onclick="closeModalOutside(event,'kalamkariModal')"
+    >
+
+        <div class="modal">
+
+            <button
+                class="modal__close"
+                onclick="closeModal('kalamkariModal')"
+            >
+                ✕
+            </button>
+
+            <p class="eyebrow">
+                TEXTILE ART
+            </p>
+
+            <h3>
+                Kalamkari
+            </h3>
+
+            <img
+                src="Image/kalamkari.jpg"
+                alt="Traditional textile art"
+                style="width:100%;margin-top:20px;"
+            >
+
+            <p style="margin-top:16px;">
+                Kalamkari is a traditional textile art involving
+                hand-drawn or hand-blocked designs and the use of
+                dyes. The craft has developed in different forms
+                in southern India.
+            </p>
+
+            <p style="margin-top:16px;">
+                <strong>Why it matters:</strong>
+                It combines drawing, textile making and natural
+                dyeing techniques to create detailed decorative fabrics.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div id="footer-slot"></div>
+
+
+    <!-- SHARED FILES -->
+
+    <script src="include.js"></script>
+    <script src="reveal.js"></script>
+
+
+    <!-- MODAL JAVASCRIPT -->
+
+    <script>
+
+        function openModal(modalId) {
+
+            const modal =
+                document.getElementById(modalId);
+
+            if (modal) {
+
+                modal.style.display = "flex";
+
+                document.body.style.overflow = "hidden";
+
+            }
+
+        }
+
+
+        function closeModal(modalId) {
+
+            const modal =
+                document.getElementById(modalId);
+
+            if (modal) {
+
+                modal.style.display = "none";
+
+                document.body.style.overflow = "";
+
+            }
+
+        }
+
+
+        function closeModalOutside(event, modalId) {
+
+            if (event.target.id === modalId) {
+
+                closeModal(modalId);
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    document
+                        .querySelectorAll(".modal-backdrop")
+                        .forEach(function(modal) {
+
+                            modal.style.display = "none";
+
+                        });
+
+                    document.body.style.overflow = "";
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
