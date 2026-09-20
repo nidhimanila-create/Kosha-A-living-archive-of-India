@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kosha — Ramayana</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Shared Kosha Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* =========================================================
+       KOSHA — RAMAYANA PAGE
+       Person 4 Section
+       Page-specific styles only
+       ========================================================= */
+
+    :root {
+      --ramayana-red: #9a503a;
+      --ramayana-gold: #c9a052;
+      --ramayana-cream: #f2ede3;
+      --ramayana-dark: #090807;
+      --ramayana-soft: #100c0b;
+    }
+
+    /* ---------------------------------------------------------
+       Reveal compatibility
+       The shared reveal.js adds .is-visible.
+       --------------------------------------------------------- */
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------------------------------------------------------
+       HERO
+       --------------------------------------------------------- */
+
+    .ramayana-hero {
+      min-height: 92vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(9, 8, 7, 0.98) 0%,
+          rgba(9, 8, 7, 0.82) 38%,
+          rgba(9, 8, 7, 0.38) 72%,
+          rgba(9, 8, 7, 0.85) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(9, 8, 7, 0.1),
+          rgba(9, 8, 7, 0.96)
+        ),
+        url("https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+    }
+
+    .ramayana-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 72% 45%,
+          rgba(201, 160, 82, 0.10),
+          transparent 30%
+        );
+      pointer-events: none;
+    }
+
+    .ramayana-hero__content {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    .ramayana-hero__eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .ramayana-hero__title {
+      max-width: 850px;
+      font-size: clamp(4.5rem, 10vw, 9rem);
+      line-height: 0.82;
+      letter-spacing: -0.035em;
+      margin-bottom: 32px;
+    }
+
+    .ramayana-hero__title span {
+      display: block;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .ramayana-hero__description {
+      max-width: 620px;
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 38px;
+    }
+
+    .ramayana-hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--text-muted);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .ramayana-hero__line {
+      width: 70px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ---------------------------------------------------------
+       STORY INTRODUCTION
+       --------------------------------------------------------- */
+
+    .ramayana-intro {
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(154, 80, 58, 0.09),
+          transparent 30%
+        ),
+        var(--background);
+    }
+
+    .ramayana-intro__grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .ramayana-intro__title {
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 0.95;
+      margin-top: 18px;
+    }
+
+    .ramayana-intro__content p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ramayana-intro__quote {
+      border-left: 1px solid var(--gold);
+      padding-left: 24px;
+      margin-top: 35px;
+      color: var(--foreground);
+      font-family: var(--font-display);
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    /* ---------------------------------------------------------
+       JOURNEY / CHAPTERS
+       --------------------------------------------------------- */
+
+    .journey-section {
+      background: var(--background-soft);
+    }
+
+    .journey-heading {
+      max-width: 700px;
+      margin-bottom: 70px;
+    }
+
+    .journey-heading h2 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      margin-top: 16px;
+    }
+
+    .journey-heading p {
+      color: var(--text-secondary);
+      margin-top: 24px;
+      max-width: 620px;
+    }
+
+    .journey-timeline {
+      position: relative;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .journey-timeline::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: var(--border-strong);
+    }
+
+    .journey-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 35px;
+      margin-bottom: 60px;
+    }
+
+    .journey-number {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--background-soft);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .journey-item h3 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .journey-item p {
+      color: var(--text-secondary);
+      max-width: 720px;
+    }
+
+    /* ---------------------------------------------------------
+       CHARACTER SECTION
+       --------------------------------------------------------- */
+
+    .characters-section {
+      background: var(--background);
+    }
+
+    .characters-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 65px;
+    }
+
+    .characters-header h2 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      margin-top: 16px;
+    }
+
+    .characters-header p {
+      max-width: 420px;
+      color: var(--text-secondary);
+    }
+
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .character-card {
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--background-elevated);
+      cursor: pointer;
+      padding: 0;
+      color: var(--foreground);
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .character-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 25%,
+          rgba(9, 8, 7, 0.25) 45%,
+          rgba(9, 8, 7, 0.96) 100%
+        );
+      z-index: 1;
+      transition: background var(--dur-base) var(--ease-cinema);
+    }
+
+    .character-card__image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.1s var(--ease-cinema);
+      filter: saturate(0.72);
+    }
+
+    .character-card:hover .character-card__image,
+    .character-card:focus-visible .character-card__image {
+      transform: scale(1.08);
+      filter: saturate(0.95);
+    }
+
+    .character-card:hover::before,
+    .character-card:focus-visible::before {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(9, 8, 7, 0.05),
+          rgba(9, 8, 7, 0.98) 100%
+        );
+    }
+
+    .character-card__content {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+    }
+
+    .character-card__number {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      margin-bottom: 12px;
+    }
+
+    .character-card__name {
+      font-family: var(--font-display);
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .character-card__role {
+      color: var(--text-secondary);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .character-card__open {
+      margin-top: 20px;
+      color: var(--gold-soft);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity var(--dur-fast) ease,
+        transform var(--dur-fast) ease;
+    }
+
+    .character-card:hover .character-card__open,
+    .character-card:focus-visible .character-card__open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------------------------------------------------------
+       PLACES / WALK THROUGH THE STORY
+       --------------------------------------------------------- */
+
+    .places-section {
+      background: var(--background-soft);
+    }
+
+    .places-header {
+      max-width: 760px;
+      margin-bottom: 70px;
+    }
+
+    .places-header h2 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      margin-top: 16px;
+    }
+
+    .places-header p {
+      color: var(--text-secondary);
+      margin-top: 24px;
+      max-width: 650px;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .place-card {
+      background: var(--background-elevated);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition:
+        transform var(--dur-base) var(--ease-cinema),
+        border-color var(--dur-base) ease;
+    }
+
+    .place-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-strong);
+    }
+
+    .place-card__image-wrapper {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .place-card__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s var(--ease-cinema);
+    }
+
+    .place-card:hover .place-card__image {
+      transform: scale(1.06);
+    }
+
+    .place-card__body {
+      padding: 30px;
+    }
+
+    .place-card__tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border: 1px solid var(--border-strong);
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .place-card__name {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .place-card__region {
+      color: var(--text-muted);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .place-card__label {
+      color: var(--gold-soft);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .place-card__text {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .place-card__visit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--foreground);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold-dark);
+      padding-bottom: 7px;
+    }
+
+    /* ---------------------------------------------------------
+       EVIDENCE NOTE
+       --------------------------------------------------------- */
+
+    .evidence-section {
+      padding: 70px 0;
+      background: var(--background);
+    }
+
+    .evidence-box {
+      border: 1px solid var(--border);
+      padding: 45px;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(201, 160, 82, 0.045),
+          transparent 60%
+        );
+    }
+
+    .evidence-box h3 {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .evidence-box p {
+      color: var(--text-secondary);
+      max-width: 850px;
+      font-size: 14px;
+    }
+
+    .evidence-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .evidence-pill {
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    /* ---------------------------------------------------------
+       MODAL
+       --------------------------------------------------------- */
+
+    .ramayana-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.84);
+      backdrop-filter: blur(12px);
+    }
+
+    .ramayana-modal-backdrop.active {
+      display: flex;
+    }
+
+    .ramayana-modal {
+      width: min(900px, 100%);
+      max-height: 88vh;
+      overflow-y: auto;
+      position: relative;
+      background: var(--background-elevated);
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+    }
+
+    .ramayana-modal__top {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ramayana-modal__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.75);
+    }
+
+    .ramayana-modal__top::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 35%,
+          rgba(23, 17, 15, 1) 100%
+        );
+    }
+
+    .ramayana-modal__close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(242, 237, 227, 0.35);
+      background: rgba(9, 8, 7, 0.65);
+      color: var(--foreground);
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+      transition: all var(--dur-fast) ease;
+    }
+
+    .ramayana-modal__close:hover,
+    .ramayana-modal__close:focus-visible {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .ramayana-modal__heading {
+      position: absolute;
+      z-index: 3;
+      left: 38px;
+      bottom: 25px;
+    }
+
+    .ramayana-modal__number {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .ramayana-modal__name {
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.8;
+    }
+
+    .ramayana-modal__body {
+      padding: 35px 40px 45px;
+    }
+
+    .ramayana-modal__role {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .ramayana-modal__description {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .modal-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .modal-detail h4 {
+      font-family: var(--font-sans);
+      color: var(--gold-soft);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .modal-detail p {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* ---------------------------------------------------------
+       FOOTER NOTE
+       --------------------------------------------------------- */
+
+    .ramayana-end {
+      text-align: center;
+      padding: 110px 0 130px;
+      background: var(--background);
+    }
+
+    .ramayana-end__symbol {
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 46px;
+      margin-bottom: 20px;
+    }
+
+    .ramayana-end h2 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.9;
+      max-width: 800px;
+      margin: 0 auto 25px;
+    }
+
+    .ramayana-end p {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ---------------------------------------------------------
+       ACCESSIBILITY
+       --------------------------------------------------------- */
+
+    .character-card:focus-visible,
+    .ramayana-modal__close:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ---------------------------------------------------------
+       RESPONSIVE
+       --------------------------------------------------------- */
+
+    @media (max-width: 1000px) {
+      .character-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ramayana-intro__grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .ramayana-hero {
+        min-height: 82vh;
+      }
+
+      .ramayana-hero__content {
+        padding-top: 80px;
+      }
+
+      .ramayana-hero__title {
+        font-size: clamp(4rem, 18vw, 6rem);
+      }
+
+      .ramayana-hero__description {
+        font-size: 15px;
+      }
+
+      .ramayana-hero__meta {
+        gap: 15px;
+      }
+
+      .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .character-card {
+        min-height: 340px;
+      }
+
+      .character-card__name {
+        font-size: 29px;
+      }
+
+      .characters-header {
+        display: block;
+      }
+
+      .characters-header p {
+        margin-top: 25px;
+      }
+
+      .places-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-item {
+        gap: 20px;
+      }
+
+      .journey-item h3 {
+        font-size: 28px;
+      }
+
+      .evidence-box {
+        padding: 30px 24px;
+      }
+
+      .ramayana-modal-backdrop {
+        padding: 12px;
+      }
+
+      .ramayana-modal__top {
+        height: 220px;
+      }
+
+      .ramayana-modal__heading {
+        left: 25px;
+      }
+
+      .ramayana-modal__body {
+        padding: 28px 25px 35px;
+      }
+
+      .modal-details {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .character-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .character-card {
+        min-height: 400px;
+      }
+
+      .ramayana-hero__meta {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       SHARED NAVBAR
+       ======================================================= -->
+
+  <div id="navbar-slot"></div>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="ramayana-hero">
+      <div class="ramayana-hero__content">
+
+        <div class="eyebrow ramayana-hero__eyebrow reveal">
+          Stories & Epics · I
+        </div>
+
+        <h1 class="ramayana-hero__title reveal">
+          The
+          <span>Ramayana</span>
+        </h1>
+
+        <p class="ramayana-hero__description reveal">
+          An epic of duty, devotion, exile, courage and return.
+          Journey through one of India's most enduring narrative
+          traditions and meet the people, places and ideas that
+          continue to shape its cultural memory.
+        </p>
+
+        <div class="ramayana-hero__meta reveal">
+          <span class="ramayana-hero__line"></span>
+          <span>A living story across generations</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         STORY OVERVIEW
+         ===================================================== -->
+
+    <section class="section ramayana-intro">
+
+      <div class="container ramayana-intro__grid">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            The Epic
+          </div>
+
+          <h2 class="ramayana-intro__title">
+            A story that
+            <span class="gold-text">travels.</span>
+          </h2>
+
+        </div>
+
+        <div class="ramayana-intro__content reveal">
+
+          <p>
+            The Ramayana is one of the great narrative traditions of
+            South Asia. At its centre is Rama, whose life is shaped by
+            questions of duty, loyalty, sacrifice and kingship.
+          </p>
+
+          <p>
+            The story follows Rama's exile from Ayodhya, his years in
+            the forest, the abduction of Sita, the alliance with
+            Hanuman and Sugriva, the journey towards Lanka and the
+            eventual return to Ayodhya.
+          </p>
+
+          <p>
+            Across centuries, the story has been retold through
+            literature, performance, temple traditions, painting,
+            sculpture, dance and regional storytelling. Different
+            communities and regions have developed their own versions,
+            emphases and interpretations.
+          </p>
+
+          <div class="ramayana-intro__quote">
+            One story. Many retellings. A cultural memory still alive.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         JOURNEY THROUGH THE STORY
+         ===================================================== -->
+
+    <section class="section journey-section">
+
+      <div class="container">
+
+        <div class="journey-heading reveal">
+
+          <div class="eyebrow">
+            Walk Through the Story
+          </div>
+
+          <h2>
+            From Ayodhya
+            <span class="gold-text">to Lanka.</span>
+          </h2>
+
+          <p>
+            Follow the broad narrative journey of the epic through
+            four defining movements.
+          </p>
+
+        </div>
+
+
+        <div class="journey-timeline">
+
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              I
+            </div>
+
+            <div>
+              <h3>Ayodhya & Exile</h3>
+
+              <p>
+                Rama's life as heir to Ayodhya changes when a promise
+                made by Dasharatha leads to his fourteen-year exile.
+                Sita and Lakshmana choose to accompany him into the
+                forest.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              II
+            </div>
+
+            <div>
+              <h3>The Forest Years</h3>
+
+              <p>
+                Rama, Sita and Lakshmana travel through forests and
+                hermitage landscapes. Their story becomes intertwined
+                with encounters involving Surpanakha, Ravana and
+                Jatayu, eventually leading to Sita's abduction.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              III
+            </div>
+
+            <div>
+              <h3>Alliance & Search</h3>
+
+              <p>
+                Rama meets Hanuman and Sugriva and forms an alliance
+                with the vanara forces. The search for Sita leads the
+                story southward towards the ocean and Lanka.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="journey-item reveal">
+
+            <div class="journey-number">
+              IV
+            </div>
+
+            <div>
+              <h3>Lanka & Return</h3>
+
+              <p>
+                Rama's forces reach Lanka. The conflict with Ravana
+                culminates in Rama's victory, followed by the return
+                towards Ayodhya and the beginning of a new chapter.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CHARACTERS
+         ===================================================== -->
+
+    <section class="section characters-section">
+
+      <div class="container">
+
+        <div class="characters-header">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              The People Within the Epic
+            </div>
+
+            <h2>
+              Meet the
+              <span class="gold-text">characters.</span>
+            </h2>
+
+          </div>
+
+          <p class="reveal">
+            Explore the central figures whose choices, relationships
+            and journeys shape the Ramayana tradition.
+          </p>
+
+        </div>
+
+
+        <div id="character-grid" class="character-grid">
+          <!-- Character cards generated by JavaScript -->
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PLACES
+         ===================================================== -->
+
+    <section class="section places-section">
+
+      <div class="container">
+
+        <div class="places-header reveal">
+
+          <div class="eyebrow">
+            Places & Cultural Memory
+          </div>
+
+          <h2>
+            Walk through
+            <span class="gold-text">the story.</span>
+          </h2>
+
+          <p>
+            Across India and beyond, landscapes, temples and towns
+            are connected with the Ramayana through literary tradition,
+            sacred geography, archaeology and regional belief.
+          </p>
+
+        </div>
+
+
+        <div class="places-grid">
+
+          <!-- Ayodhya -->
+
+          <article class="place-card reveal">
+
+            <div class="place-card__image-wrapper">
+
+              <img
+                class="place-card__image"
+                src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=1200&q=80"
+                alt="Temple architecture representing Ayodhya"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="place-card__body">
+
+              <span class="place-card__tag">
+                Tradition
+              </span>
+
+              <h3 class="place-card__name">
+                Ayodhya
+              </h3>
+
+              <div class="place-card__region">
+                Uttar Pradesh · India
+              </div>
+
+              <div class="place-card__label">
+                Story Connection
+              </div>
+
+              <p class="place-card__text">
+                In the Ramayana tradition, Ayodhya is the kingdom of
+                Rama and the setting for his birth, exile and eventual
+                return.
+              </p>
+
+              <div class="place-card__label">
+                Present Day
+              </div>
+
+              <p class="place-card__text">
+                Ayodhya remains an important pilgrimage and cultural
+                centre associated with the Rama tradition.
+              </p>
+
+              <span class="place-card__visit">
+                Explore the place →
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Chitrakoot -->
+
+          <article class="place-card reveal">
+
+            <div class="place-card__image-wrapper">
+
+              <img
+                class="place-card__image"
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80"
+                alt="Indian temple and landscape associated with pilgrimage"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="place-card__body">
+
+              <span class="place-card__tag">
+                Tradition
+              </span>
+
+              <h3 class="place-card__name">
+                Chitrakoot
+              </h3>
+
+              <div class="place-card__region">
+                Uttar Pradesh / Madhya Pradesh · India
+              </div>
+
+              <div class="place-card__label">
+                Story Connection
+              </div>
+
+              <p class="place-card__text">
+                Chitrakoot is traditionally associated with the forest
+                period of Rama, Sita and Lakshmana and their stay among
+                the region's landscapes and hermitages.
+              </p>
+
+              <div class="place-card__label">
+                Present Day
+              </div>
+
+              <p class="place-card__text">
+                The region is known for pilgrimage sites, temples,
+                rivers and landscapes connected with Ramayana traditions.
+              </p>
+
+              <span class="place-card__visit">
+                Explore the place →
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Panchavati -->
+
+          <article class="place-card reveal">
+
+            <div class="place-card__image-wrapper">
+
+              <img
+                class="place-card__image"
+                src="https://images.unsplash.com/photo-1609920658906-8223bd289001?auto=format&fit=crop&w=1200&q=80"
+                alt="Historic Indian landscape associated with Nashik"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="place-card__body">
+
+              <span class="place-card__tag">
+                Sacred Geography
+              </span>
+
+              <h3 class="place-card__name">
+                Panchavati
+              </h3>
+
+              <div class="place-card__region">
+                Nashik · Maharashtra · India
+              </div>
+
+              <div class="place-card__label">
+                Story Connection
+              </div>
+
+              <p class="place-card__text">
+                Panchavati is traditionally identified with part of
+                Rama, Sita and Lakshmana's forest journey and several
+                important episodes of the epic.
+              </p>
+
+              <div class="place-card__label">
+                Present Day
+              </div>
+
+              <p class="place-card__text">
+                Present-day Nashik contains several pilgrimage sites
+                and traditions associated with Panchavati.
+              </p>
+
+              <span class="place-card__visit">
+                Explore the place →
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Kishkindha -->
+
+          <article class="place-card reveal">
+
+            <div class="place-card__image-wrapper">
+
+              <img
+                class="place-card__image"
+                src="https://images.unsplash.com/photo-1600100397608-f0101c9e9d8d?auto=format&fit=crop&w=1200&q=80"
+                alt="Rocky landscape representing the Kishkindha tradition"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="place-card__body">
+
+              <span class="place-card__tag">
+                Regional Tradition
+              </span>
+
+              <h3 class="place-card__name">
+                Kishkindha
+              </h3>
+
+              <div class="place-card__region">
+                Hampi region · Karnataka · India
+              </div>
+
+              <div class="place-card__label">
+                Story Connection
+              </div>
+
+              <p class="place-card__text">
+                The Hampi region is traditionally identified with
+                Kishkindha, the kingdom associated with Sugriva,
+                Hanuman and the vanara characters.
+              </p>
+
+              <div class="place-card__label">
+                Present Day
+              </div>
+
+              <p class="place-card__text">
+                The landscape around Hampi is rich in archaeological
+                heritage while also preserving strong Ramayana-related
+                local traditions.
+              </p>
+
+              <span class="place-card__visit">
+                Explore the place →
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Rameswaram -->
+
+          <article class="place-card reveal">
+
+            <div class="place-card__image-wrapper">
+
+              <img
+                class="place-card__image"
+                src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80"
+                alt="South Indian temple architecture representing Rameswaram"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="place-card__body">
+
+              <span class="place-card__tag">
+                Pilgrimage Tradition
+              </span>
+
+              <h3 class="place-card__name">
+                Rameswaram
+              </h3>
+
+              <div class="place-card__region">
+                Tamil Nadu · India
+              </div>
+
+              <div class="place-card__label">
+                Story Connection
+              </div>
+
+              <p class="place-card__text">
+                Rameswaram has a longstanding religious tradition
+                connecting the region with Rama's journey towards Lanka.
+              </p>
+
+              <div class="place-card__label">
+                Present Day
+              </div>
+
+              <p class="place-card__text">
+                The town is an important pilgrimage destination and
+                is known for the Ramanathaswamy Temple and its
+                distinctive cultural landscape.
+              </p>
+
+              <span class="place-card__visit">
+                Explore the place →
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Sri Lanka -->
+
+          <article class="place-card reveal">
+
+            <div class="place-card__image-wrapper">
+
+              <img
+                class="place-card__image"
+                src="https://images.unsplash.com/photo-1588258524675-cb7b8a7a9f6e?auto=format&fit=crop&w=1200&q=80"
+                alt="Landscape of Sri Lanka associated with Ramayana traditions"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="place-card__body">
+
+              <span class="place-card__tag">
+                Regional Belief
+              </span>
+
+              <h3 class="place-card__name">
+                Sri Lanka
+              </h3>
+
+              <div class="place-card__region">
+                Sri Lanka
+              </div>
+
+              <div class="place-card__label">
+                Story Connection
+              </div>
+
+              <p class="place-card__text">
+                Numerous places in Sri Lanka are associated with
+                Ramayana traditions, particularly with Ravana, Sita
+                and the events of the Lanka portion of the epic.
+              </p>
+
+              <div class="place-card__label">
+                Important Note
+              </div>
+
+              <p class="place-card__text">
+                These identifications belong primarily to religious,
+                literary and regional traditions and should not be
+                treated as independently proven historical locations.
+              </p>
+
+              <span class="place-card__visit">
+                Explore the tradition →
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EVIDENCE / CONTEXT
+         ===================================================== -->
+
+    <section class="evidence-section">
+
+      <div class="container">
+
+        <div class="evidence-box reveal">
+
+          <div class="eyebrow">
+            Reading the Past Carefully
+          </div>
+
+          <h3>
+            Tradition is not the same as proof.
+          </h3>
+
+          <p>
+            Kosha distinguishes between literary tradition, religious
+            belief, archaeological evidence and historically documented
+            places. A location being associated with the Ramayana for
+            generations is culturally significant, but that association
+            does not automatically establish that the epic events
+            occurred there as literal historical events. This distinction
+            allows the story to be explored with both cultural respect
+            and historical care.
+          </p>
+
+          <div class="evidence-legend">
+
+            <span class="evidence-pill">
+              Literary Tradition
+            </span>
+
+            <span class="evidence-pill">
+              Sacred Geography
+            </span>
+
+            <span class="evidence-pill">
+              Archaeological Heritage
+            </span>
+
+            <span class="evidence-pill">
+              Regional Belief
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         END
+         ===================================================== -->
+
+    <section class="ramayana-end">
+
+      <div class="container">
+
+        <div class="ramayana-end__symbol reveal">
+          ✦
+        </div>
+
+        <h2 class="reveal">
+          The story continues
+          <span class="gold-text">to live.</span>
+        </h2>
+
+        <p class="reveal">
+          In temples, theatre, dance, literature, festivals, landscapes
+          and everyday memory, the Ramayana continues to be retold
+          in many voices.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       CHARACTER DETAIL MODAL
+       ======================================================= -->
+
+  <div
+    id="character-modal"
+    class="ramayana-modal-backdrop"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-character-name"
+    aria-hidden="true"
+  >
+
+    <div class="ramayana-modal">
+
+      <div class="ramayana-modal__top">
+
+        <button
+          id="modal-close"
+          class="ramayana-modal__close"
+          type="button"
+          aria-label="Close character details"
+        >
+          ×
+        </button>
+
+        <img
+          id="modal-image"
+          class="ramayana-modal__image"
+          src=""
+          alt=""
+        >
+
+        <div class="ramayana-modal__heading">
+
+          <div
+            id="modal-number"
+            class="ramayana-modal__number"
+          ></div>
+
+          <h2
+            id="modal-character-name"
+            class="ramayana-modal__name"
+          ></h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="ramayana-modal__body">
+
+        <div
+          id="modal-role"
+          class="ramayana-modal__role"
+        ></div>
+
+        <p
+          id="modal-description"
+          class="ramayana-modal__description"
+        ></p>
+
+
+        <div class="modal-details">
+
+          <div class="modal-detail">
+
+            <h4>
+              Important Relationships
+            </h4>
+
+            <p id="modal-relationships"></p>
+
+          </div>
+
+
+          <div class="modal-detail">
+
+            <h4>
+              Major Events
+            </h4>
+
+            <p id="modal-events"></p>
+
+          </div>
+
+
+          <div class="modal-detail">
+
+            <h4>
+              Associated Locations
+            </h4>
+
+            <p id="modal-locations"></p>
+
+          </div>
+
+
+          <div class="modal-detail">
+
+            <h4>
+              Cultural Context
+            </h4>
+
+            <p id="modal-context"></p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       SHARED FOOTER
+       ======================================================= -->
+
+  <div id="footer-slot"></div>
+
+
+  <!-- =======================================================
+       SHARED SCRIPTS
+       ======================================================= -->
+
+  <script src="include.js"></script>
+  <script src="reveal.js"></script>
+
+
+  <!-- =======================================================
+       RAMAYANA PAGE JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    /*
+     * ========================================================
+     * RAMAYANA CHARACTER DATA
+     * ========================================================
+     *
+     * Keeping the character information in one array makes it
+     * easier to maintain and update the page later.
+     */
+
+    var characters = [
+
+      {
+        number: "01",
+        name: "Rama",
+        role: "Prince of Ayodhya · Central Hero",
+        image:
+          "https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Rama is the central figure of the Ramayana. He is portrayed as a prince committed to duty, truth and moral responsibility. His exile, search for Sita and return to Ayodhya form the central movement of the epic.",
+
+        relationships:
+          "Son of Dasharatha and Kaushalya; husband of Sita; elder brother of Lakshmana, Bharata and Shatrughna; ally of Hanuman and Sugriva.",
+
+        events:
+          "Exile from Ayodhya, forest journey, Sita's abduction, alliance with Sugriva and Hanuman, journey to Lanka, conflict with Ravana and return to Ayodhya.",
+
+        locations:
+          "Ayodhya, Chitrakoot, Panchavati, Kishkindha traditions, Rameswaram and Lanka traditions.",
+
+        context:
+          "Rama is revered in Hindu traditions and is interpreted differently across regional retellings of the Ramayana."
+      },
+
+
+      {
+        number: "02",
+        name: "Sita",
+        role: "Princess of Mithila · Rama's Wife",
+        image:
+          "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Sita is one of the most important figures in the Ramayana. Her relationship with Rama, her experience of exile and captivity, and her strength in difficult circumstances have made her central to countless literary and cultural interpretations.",
+
+        relationships:
+          "Wife of Rama; daughter of King Janaka in the epic tradition; closely connected with Lakshmana during the forest journey.",
+
+        events:
+          "Marriage with Rama, voluntary exile, life in the forest, abduction by Ravana, captivity in Lanka and return with Rama.",
+
+        locations:
+          "Mithila traditions, Ayodhya, Chitrakoot, Panchavati and several locations in Lanka traditions.",
+
+        context:
+          "Sita has been interpreted in many ways across literature, theatre, folklore and devotional traditions."
+      },
+
+
+      {
+        number: "03",
+        name: "Lakshmana",
+        role: "Prince of Ayodhya · Rama's Brother",
+        image:
+          "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Lakshmana is Rama's younger brother and one of his closest companions. He chooses to accompany Rama and Sita into exile and remains closely involved in the major events of the forest and Lanka portions of the story.",
+
+        relationships:
+          "Younger brother of Rama; husband of Urmila; brother of Bharata and Shatrughna; devoted companion of Rama.",
+
+        events:
+          "Accompanies Rama into exile, protects Rama and Sita in the forest, encounters Surpanakha and participates in the conflict in Lanka.",
+
+        locations:
+          "Ayodhya, Chitrakoot, Panchavati and Lanka traditions.",
+
+        context:
+          "Lakshmana represents loyalty, brotherhood and service in many interpretations of the epic."
+      },
+
+
+      {
+        number: "04",
+        name: "Bharata",
+        role: "Prince of Ayodhya · Rama's Brother",
+        image:
+          "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Bharata is Rama's younger brother. After Rama's exile, Bharata rejects the idea of taking the throne for himself and seeks Rama's return, becoming one of the epic's important examples of loyalty and duty.",
+
+        relationships:
+          "Son of Dasharatha and Kaikeyi; younger brother of Rama and elder brother of Shatrughna.",
+
+        events:
+          "Learns of Rama's exile, confronts the consequences of Kaikeyi's request, meets Rama in the forest and governs Ayodhya while awaiting Rama's return.",
+
+        locations:
+          "Ayodhya and the forest regions associated with Rama's exile.",
+
+        context:
+          "Bharata is often remembered for his devotion to Rama and his rejection of personal power."
+      },
+
+
+      {
+        number: "05",
+        name: "Shatrughna",
+        role: "Prince of Ayodhya · Rama's Brother",
+        image:
+          "https://images.unsplash.com/photo-1582550945154-66ea8fff25e1?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Shatrughna is the youngest of the four brothers in the central royal family of Ayodhya. Though less prominent in the main narrative, he plays an important role in the wider Ramayana tradition.",
+
+        relationships:
+          "Son of Dasharatha and Sumitra; brother of Rama, Bharata and Lakshmana; husband of Shrutakirti.",
+
+        events:
+          "Supports Bharata and later takes part in events described in the wider Ramayana narrative.",
+
+        locations:
+          "Ayodhya and locations appearing in later portions of Ramayana traditions.",
+
+        context:
+          "His smaller narrative role demonstrates that the epic contains many characters whose stories vary across different versions."
+      },
+
+
+      {
+        number: "06",
+        name: "Hanuman",
+        role: "Devotee · Ally of Rama",
+        image:
+          "https://images.unsplash.com/photo-1599685315640-48f0f7f7f7f0?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Hanuman is one of the most widely revered figures associated with the Ramayana. Known for strength, courage, intelligence and devotion, he becomes a key ally in Rama's search for Sita.",
+
+        relationships:
+          "Ally and devoted follower of Rama; associated with Sugriva and the vanara community.",
+
+        events:
+          "Meets Rama, helps locate Sita, travels to Lanka, delivers Rama's message to Sita and participates in the campaign against Ravana.",
+
+        locations:
+          "Kishkindha traditions, Hampi region, Lanka traditions and several pilgrimage landscapes across India.",
+
+        context:
+          "Hanuman is central to devotional traditions and is represented in numerous forms of worship, performance and art."
+      },
+
+
+      {
+        number: "07",
+        name: "Ravana",
+        role: "King of Lanka · Antagonist",
+        image:
+          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Ravana is the powerful king of Lanka and the principal antagonist in the central conflict of the Ramayana. The epic portrays him as a complex figure possessing great knowledge and power while also making destructive choices.",
+
+        relationships:
+          "Brother of Vibhishana and Kumbhakarna; associated with Sita's abduction and the conflict with Rama.",
+
+        events:
+          "Abduction of Sita, captivity of Sita in Lanka and the eventual war with Rama's forces.",
+
+        locations:
+          "Lanka in the literary tradition and numerous Sri Lankan locations associated with Ravana in regional traditions.",
+
+        context:
+          "Ravana is interpreted differently across South Asian traditions, with some regional traditions emphasizing aspects beyond his role as antagonist."
+      },
+
+
+      {
+        number: "08",
+        name: "Kaikeyi",
+        role: "Queen of Ayodhya · Bharata's Mother",
+        image:
+          "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Kaikeyi is one of Dasharatha's queens and the mother of Bharata. Her request that Rama be exiled becomes one of the crucial turning points that begins the central journey of the epic.",
+
+        relationships:
+          "Wife of Dasharatha; mother of Bharata; stepmother of Rama.",
+
+        events:
+          "Claims two promises from Dasharatha, requests Rama's exile and Bharata's succession, setting the exile narrative in motion.",
+
+        locations:
+          "Ayodhya and the royal court of Dasharatha.",
+
+        context:
+          "Kaikeyi's character has inspired varied interpretations concerning duty, motherhood, political power and regret."
+      },
+
+
+      {
+        number: "09",
+        name: "Dasharatha",
+        role: "King of Ayodhya · Rama's Father",
+        image:
+          "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Dasharatha is the king of Ayodhya and father of Rama, Bharata, Lakshmana and Shatrughna. His earlier promises and inability to reverse Kaikeyi's demand lead directly to Rama's exile.",
+
+        relationships:
+          "Father of Rama, Bharata, Lakshmana and Shatrughna; husband of Kaushalya, Kaikeyi and Sumitra in the epic tradition.",
+
+        events:
+          "Promises Kaikeyi two boons, reluctantly orders Rama's exile and experiences profound grief after Rama leaves.",
+
+        locations:
+          "Ayodhya and the royal court.",
+
+        context:
+          "Dasharatha's story is frequently interpreted through themes of promises, kingship, love and tragic consequence."
+      },
+
+
+      {
+        number: "10",
+        name: "Sugriva",
+        role: "Vanara King · Rama's Ally",
+        image:
+          "https://images.unsplash.com/photo-1600100397608-f0101c9e9d8d?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Sugriva is a major ally of Rama and the leader of the vanara community in the Ramayana tradition. His alliance with Rama becomes essential to the search for Sita.",
+
+        relationships:
+          "Brother of Vali; ally of Rama; closely associated with Hanuman.",
+
+        events:
+          "Forms an alliance with Rama, regains his kingdom and provides forces for the search for Sita.",
+
+        locations:
+          "Kishkindha, traditionally associated with the Hampi region of Karnataka.",
+
+        context:
+          "Kishkindha traditions connect Sugriva and Hanuman with the distinctive rocky landscapes around Hampi."
+      },
+
+
+      {
+        number: "11",
+        name: "Vibhishana",
+        role: "Prince of Lanka · Rama's Ally",
+        image:
+          "https://images.unsplash.com/photo-1531501410720-c8d437636169?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Vibhishana is Ravana's brother who chooses to oppose Ravana's actions and support Rama. His story explores questions of loyalty, justice and moral responsibility.",
+
+        relationships:
+          "Brother of Ravana and Kumbhakarna; supporter and ally of Rama.",
+
+        events:
+          "Advises Ravana, leaves Lanka after being rejected and joins Rama's side during the conflict.",
+
+        locations:
+          "Lanka in the literary tradition and places associated with Sri Lankan Ramayana traditions.",
+
+        context:
+          "Vibhishana is often interpreted as a figure who chooses moral duty over loyalty to an unjust ruler."
+      },
+
+
+      {
+        number: "12",
+        name: "Jatayu",
+        role: "Divine Bird · Protector of Sita",
+        image:
+          "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=80",
+
+        description:
+          "Jatayu is a powerful bird figure who attempts to stop Ravana when Sita is being taken away. His encounter with Ravana becomes one of the epic's memorable examples of courage and sacrifice.",
+
+        relationships:
+          "Associated with Dasharatha and Rama; attempts to protect Sita from Ravana.",
+
+        events:
+          "Witnesses Sita's abduction, confronts Ravana and is fatally wounded while attempting to rescue her.",
+
+        locations:
+          "Several locations across India are associated with Jatayu through regional traditions.",
+
+        context:
+          "Jatayu is widely remembered as a symbol of courage, sacrifice and protection."
+      }
+
+    ];
+
+
+    /*
+     * ========================================================
+     * CREATE CHARACTER CARDS
+     * ========================================================
+     */
+
+    var characterGrid =
+      document.getElementById("character-grid");
+
+
+    characters.forEach(function (character) {
+
+      var card =
+        document.createElement("button");
+
+      card.type = "button";
+
+      card.className =
+        "character-card reveal";
+
+      card.setAttribute(
+        "aria-label",
+        "View details about " + character.name
+      );
+
+
+      card.innerHTML = `
+
+        <img
+          class="character-card__image"
+          src="${character.image}"
+          alt="${character.name}"
+          loading="lazy"
+        >
+
+        <div class="character-card__content">
+
+          <div class="character-card__number">
+            ${character.number}
+          </div>
+
+          <div class="character-card__name">
+            ${character.name}
+          </div>
+
+          <div class="character-card__role">
+            ${character.role}
+          </div>
+
+          <div class="character-card__open">
+            Explore character →
+          </div>
+
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        function () {
+          openCharacterModal(character);
+        }
+      );
+
+
+      characterGrid.appendChild(card);
+
+    });
+
+
+    /*
+     * ========================================================
+     * MODAL ELEMENTS
+     * ========================================================
+     */
+
+    var modal =
+      document.getElementById("character-modal");
+
+    var modalClose =
+      document.getElementById("modal-close");
+
+    var modalImage =
+      document.getElementById("modal-image");
+
+    var modalNumber =
+      document.getElementById("modal-number");
+
+    var modalName =
+      document.getElementById("modal-character-name");
+
+    var modalRole =
+      document.getElementById("modal-role");
+
+    var modalDescription =
+      document.getElementById("modal-description");
+
+    var modalRelationships =
+      document.getElementById("modal-relationships");
+
+    var modalEvents =
+      document.getElementById("modal-events");
+
+    var modalLocations =
+      document.getElementById("modal-locations");
+
+    var modalContext =
+      document.getElementById("modal-context");
+
+
+    /*
+     * ========================================================
+     * OPEN MODAL
+     * ========================================================
+     */
+
+    function openCharacterModal(character) {
+
+      modalNumber.textContent =
+        "Character " + character.number;
+
+      modalName.textContent =
+        character.name;
+
+      modalRole.textContent =
+        character.role;
+
+      modalDescription.textContent =
+        character.description;
+
+      modalRelationships.textContent =
+        character.relationships;
+
+      modalEvents.textContent =
+        character.events;
+
+      modalLocations.textContent =
+        character.locations;
+
+      modalContext.textContent =
+        character.context;
+
+      modalImage.src =
+        character.image;
+
+      modalImage.alt =
+        character.name;
+
+
+      modal.classList.add("active");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+
+      modalClose.focus();
+
+    }
+
+
+    /*
+     * ========================================================
+     * CLOSE MODAL
+     * ========================================================
+     */
+
+    function closeCharacterModal() {
+
+      modal.classList.remove("active");
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /*
+     * CLOSE BUTTON
+     */
+
+    modalClose.addEventListener(
+      "click",
+      closeCharacterModal
+    );
+
+
+    /*
+     * CLOSE WHEN CLICKING OUTSIDE MODAL
+     */
+
+    modal.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === modal) {
+          closeCharacterModal();
+        }
+
+      }
+    );
+
+
+    /*
+     * ESCAPE KEY
+     */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Escape" &&
+          modal.classList.contains("active")
+        ) {
+
+          closeCharacterModal();
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
